@@ -63,12 +63,4 @@ class GameScene: SKScene {
         
     }
     
-    func override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        <#code#>
-    }
-    
-    func override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        <#code#>
-    }
-    
 }
