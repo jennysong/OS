@@ -17,7 +17,7 @@ class GameScene: SKScene {
     let gameLayer = SKNode()
     let sportsLayer = SKNode()
     var TileWidth = CGFloat(130)
-    var TileHeight = CGFloat(120)
+    var TileHeight = CGFloat(105)
     var selectionSprite = SKSpriteNode()
     var sportsarray = Array<Sport>()
     var numOfTap: Int = 0
@@ -25,9 +25,9 @@ class GameScene: SKScene {
     
     override init(size: CGSize) {
         super.init(size: size)
-        anchorPoint = CGPoint(x: 0.5, y:0.5)
+        anchorPoint = CGPoint(x: 0.5, y:0.45)
 //        let background = SKSpriteNode(imageNamed: "Background")
-        backgroundColor = SKColor.whiteColor()
+        backgroundColor = SKColor.blackColor()
         addChild(gameLayer)
         let layerPosition = CGPoint(x: -TileWidth * CGFloat(NumColumns) / 2, y: -TileHeight * CGFloat(NumRows) / 2)
         sportsLayer.position = layerPosition
@@ -150,9 +150,9 @@ class GameScene: SKScene {
     }
     
     func bothWin(){
-        println("both win!")
+        println("both won!")
         reset()
-        
+        switchSceneToResults("BothWon")
     }
     
     func nextTurn(){
@@ -168,23 +168,26 @@ class GameScene: SKScene {
         numOfTap = 0
         sportsarray = []
         if selectionSprite.parent != nil {
-            selectionSprite.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))        }
+            selectionSprite.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))
+        }
     }
     
     func whoWon(){
         println("someone won")
         reset()
+        switchSceneToResults("someoneWon")
     }
     
 
-//    
-//    func switchSceneToLose() {
-//        let loseAction = SKAction.runBlock() {
-//            let reveal = SKTransition.flipHorizontalWithDuration(0.5)
-//            let gameOverScene = Result(size: self.size, string: "lose")
-//            self.view?.presentScene(gameOverScene,transition: reveal)
-//        }
-//    }
+    
+    func switchSceneToResults(string: String) {
+        runAction(SKAction.sequence([SKAction.waitForDuration(0.5),SKAction.runBlock(){
+            let reveal = SKTransition.flipHorizontalWithDuration(0.5)
+            let scene = Result(size: self.size,string: string)
+            self.view?.presentScene(scene, transition:reveal)
+            }
+            ]))
+    }
     
     
 }
