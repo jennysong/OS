@@ -71,81 +71,81 @@ class GameScene: SKScene {
 }
 // shawn ßtest
 func donothing1(){
-    if(check(sport01, ))
+    if(check(sport01, numOfTap)) {}
 }
 
 func donothing2(){
-    check(sport02, count)
+    check(sport02, numOfTap)
 }
 
 func donothing3(){
-    check(sport03, count)
+    check(sport03, numOfTap)
 }
 
 func donothing4(){
-    check(sport04, count)
+    check(sport04, numOfTap)
 }
 
 func donothing5(){
-    check(sport05, count)
+    check(sport05, numOfTap)
 }
 
 func donothing6(){
-    check(sport06, count)
+    check(sport06, numOfTap)
 }
 
 func donothing7(){
-    check(sport07, count)
+    check(sport07, numOfTap)
 }
 
 func donothing8(){
-    check(sport08, count)
+    check(sport08, numOfTap)
 }
 
 func donothing9(){
-    check(sport09, count)
+    check(sport09, numOfTap)
 }
 
 func donothing10(){
-    check(sport10, count)
+    check(sport10, numOfTap)
 }
 
 func donothing11(){
-    check(sport11, count)
+    check(sport11, numOfTap)
 }
 
 
 func donothing12(){
-    check(sport12, count)
+    check(sport12, numOfTap)
 }
 
 func donothing13(){
-    check(sport13, count)
+    check(sport13, numOfTap)
 }
 
 func donothing14(){
-    check(sport15, count)
+    check(sport15, numOfTap)
 }
 
 func donothing15(){
-    check(sport14, count)
+    check(sport14, numOfTap)
 }
 
 func check(sport: ActionButton, n: Int) -> Bool{
-    if(n == 0){
-        
+    if(numOfTap == 0){
+        return true
     }
     
     if( sports.count >= 15) {
         // both are smart
-        count = 0;
+        numOfTap = 0;
     }
     
     if sport == sports[n] {
         return true
     }
     else {
-        count = 0;
+        numOfTap = 0;
         return false
     }
 }
