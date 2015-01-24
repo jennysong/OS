@@ -63,12 +63,24 @@ class GameScene: SKScene {
         
     }
     
-    func override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        <#code#>
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        for touch: AnyObject in touches {
+            let touchLocation = touch.locationInNode(self)
+            let touchedNode = nodeAtPoint(touchLocation);
+            touchedNode.hidden = true
+            println(touchedNode)
+            if let spriteNode = node as? SKSpriteN  ode {
+                println(spriteNode.texture)
+            }
+            
+           /*
+            let touchedSpriteArray = gameLogic.sprites.filter { $0.sprite === touchedNode };
+            if touchedSpriteArray.count > 0
+            {   // if we touched a tile, fire its tap event
+                touchedSpriteArray[0].onTap();
+            }*/
+        }
     }
-    
-    func override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        <#code#>
-    }
+
     
 }

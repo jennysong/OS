@@ -54,6 +54,7 @@
 		BA73D6981A735A40005B852D /* sport23.png in Resources */ = {isa = PBXBuildFile; fileRef = BA73D6701A735A40005B852D /* sport23.png */; };
 		BA73D6991A735A40005B852D /* sport24.png in Resources */ = {isa = PBXBuildFile; fileRef = BA73D6711A735A40005B852D /* sport24.png */; };
 		BA73D69A1A735A40005B852D /* sport25.png in Resources */ = {isa = PBXBuildFile; fileRef = BA73D6721A735A40005B852D /* sport25.png */; };
+		BA80C8341A7377CA00E3E3AC /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA80C8331A7377CA00E3E3AC /* ActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		BA73D6701A735A40005B852D /* sport23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sport23.png; sourceTree = "<group>"; };
 		BA73D6711A735A40005B852D /* sport24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sport24.png; sourceTree = "<group>"; };
 		BA73D6721A735A40005B852D /* sport25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sport25.png; sourceTree = "<group>"; };
+		BA80C8331A7377CA00E3E3AC /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			children = (
 				BA73D64A1A735A40005B852D /* images */,
 				BA73D5F11A734B54005B852D /* AppDelegate.swift */,
+				BA80C8331A7377CA00E3E3AC /* ActionButton.swift */,
 				BA73D5F51A734B54005B852D /* GameScene.swift */,
 				BA73D5F71A734B54005B852D /* GameViewController.swift */,
 				BA73D5F91A734B54005B852D /* Main.storyboard */,
@@ -386,6 +389,7 @@
 				BA73D5F61A734B54005B852D /* GameScene.swift in Sources */,
 				BA73D5F81A734B54005B852D /* GameViewController.swift in Sources */,
 				BA73D5F21A734B54005B852D /* AppDelegate.swift in Sources */,
+				BA80C8341A7377CA00E3E3AC /* ActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +581,7 @@
 				BA73D6111A734B54005B852D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA73D6121A734B54005B852D /* Build configuration list for PBXNativeTarget "WhatDoWeDoNowTests" */ = {
 			isa = XCConfigurationList;
@@ -585,6 +590,7 @@
 				BA73D6141A734B54005B852D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
