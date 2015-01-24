@@ -72,6 +72,7 @@ class GameScene: SKScene {
         if success {
             if let sport = level.sportAtColumn(column,  row: row){
             showSelectionIndicatorForSport(sport)
+                
                 if (checkCorrect(sport)){
                     if(sportsarray.count == numOfTap){
                         sportsarray.append(sport)
@@ -80,6 +81,9 @@ class GameScene: SKScene {
                         return
                     }
                     numOfTap++
+                    if( numOfTap == 15 ) {
+                        bothWin()
+                    }
                 } else {
                     whoWon()
                 }
@@ -117,10 +121,7 @@ class GameScene: SKScene {
     func checkCorrect(sport: Sport) -> Bool{
         println("number of tab = \(numOfTap)")
         println("sportarray count = \(sportsarray.endIndex)")
-        if( sportsarray.count >= 15) {
-            bothWin()
-            println("both win")
-        }
+        
         if(sportsarray.count == 0){
             println("start")
             return true
@@ -166,6 +167,8 @@ class GameScene: SKScene {
         println("reset")
         numOfTap = 0
         sportsarray = []
+        if selectionSprite.parent != nil {
+            selectionSprite.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))        }
     }
     
     func whoWon(){
