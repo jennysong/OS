@@ -10,25 +10,24 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    let sport01:ActionButton = ActionButton(defaultButtonImage: "sport01", activeButtonImage: "sport01_", buttonAction: donothing())
-//    let sport01 = SKSpriteNode(imageNamed: "sport01")
-    let sport02 = SKSpriteNode(imageNamed: "sport02")
-    let sport03 = SKSpriteNode(imageNamed: "sport03")
-    let sport04 = SKSpriteNode(imageNamed: "sport04")
-    let sport05 = SKSpriteNode(imageNamed: "sport05")
-    let sport06 = SKSpriteNode(imageNamed: "sport06")
-    let sport07 = SKSpriteNode(imageNamed: "sport07")
-    let sport08 = SKSpriteNode(imageNamed: "sport08")
-    let sport09 = SKSpriteNode(imageNamed: "sport09")
-    let sport10 = SKSpriteNode(imageNamed: "sport10")
-    let sport11 = SKSpriteNode(imageNamed: "sport11")
-    let sport12 = SKSpriteNode(imageNamed: "sport12")
-    let sport13 = SKSpriteNode(imageNamed: "sport13")
-    let sport14 = SKSpriteNode(imageNamed: "sport14")
-    let sport15 = SKSpriteNode(imageNamed: "sport15")
+    let sport01:ActionButton = ActionButton(defaultButtonImage: "sport01", activeButtonImage: "sport01_", buttonAction: donothing)
+    let sport02:ActionButton = ActionButton(defaultButtonImage: "sport02", activeButtonImage: "sport02_", buttonAction: donothing)
+    let sport03:ActionButton = ActionButton(defaultButtonImage: "sport03", activeButtonImage: "sport03_", buttonAction: donothing)
+    let sport04:ActionButton = ActionButton(defaultButtonImage: "sport04", activeButtonImage: "sport04_", buttonAction: donothing)
+    let sport05:ActionButton = ActionButton(defaultButtonImage: "sport05", activeButtonImage: "sport05_", buttonAction: donothing)
+    let sport06:ActionButton = ActionButton(defaultButtonImage: "sport06", activeButtonImage: "sport06_", buttonAction: donothing)
+    let sport07:ActionButton = ActionButton(defaultButtonImage: "sport07", activeButtonImage: "sport07_", buttonAction: donothing)
+    let sport08:ActionButton = ActionButton(defaultButtonImage: "sport08", activeButtonImage: "sport08_", buttonAction: donothing)
+    let sport09:ActionButton = ActionButton(defaultButtonImage: "sport09", activeButtonImage: "sport09_", buttonAction: donothing)
+    let sport10:ActionButton = ActionButton(defaultButtonImage: "sport10", activeButtonImage: "sport10_", buttonAction: donothing)
+    let sport11:ActionButton = ActionButton(defaultButtonImage: "sport11", activeButtonImage: "sport11_", buttonAction: donothing)
+    let sport12:ActionButton = ActionButton(defaultButtonImage: "sport12", activeButtonImage: "sport12_", buttonAction: donothing)
+    let sport13:ActionButton = ActionButton(defaultButtonImage: "sport13", activeButtonImage: "sport13_", buttonAction: donothing)
+    let sport14:ActionButton = ActionButton(defaultButtonImage: "sport14", activeButtonImage: "sport14_", buttonAction: donothing)
+    let sport15:ActionButton = ActionButton(defaultButtonImage: "sport15", activeButtonImage: "sport15_", buttonAction: donothing)
 
-    func donothing() -> void {
-    }
+
+
     
     override func didMoveToView(view: SKView) {
         backgroundColor = SKColor.whiteColor()
