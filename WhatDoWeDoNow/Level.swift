@@ -30,14 +30,14 @@ class Level {
         // 1
         for row in 0..<NumRows {
             for column in 0..<NumColumns {
-                
+//                println("row = \(row) column = \(column)")
                 // 2
                 var sportType = SportType(rawValue: Int(num) + 1)!
                 
                 // 3
                 let sport =  Sport(column: column, row: row, sportType: sportType)
                 sports[column, row] = sport
-                
+                println(sport)
                 // 4
                 set.addElement(sport)
                 num++
