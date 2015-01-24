@@ -25,8 +25,8 @@ class GameScene: SKScene {
     let sport13:ActionButton = ActionButton(defaultButtonImage: "sport13", activeButtonImage: "sport13_", buttonAction: donothing)
     let sport14:ActionButton = ActionButton(defaultButtonImage: "sport14", activeButtonImage: "sport14_", buttonAction: donothing)
     let sport15:ActionButton = ActionButton(defaultButtonImage: "sport15", activeButtonImage: "sport15_", buttonAction: donothing)
-
-
+    
+    
 
     
     override func didMoveToView(view: SKView) {
@@ -64,8 +64,13 @@ class GameScene: SKScene {
         
     }
     
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        let touch = touches.anyObject() as UITouch
+//        let location = touch.locationInNode()
+    }
+    
 }
 
 func donothing(){
-    println("hello")
+    
 }

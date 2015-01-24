@@ -54,6 +54,8 @@
 		BA73D6981A735A40005B852D /* sport23.png in Resources */ = {isa = PBXBuildFile; fileRef = BA73D6701A735A40005B852D /* sport23.png */; };
 		BA73D6991A735A40005B852D /* sport24.png in Resources */ = {isa = PBXBuildFile; fileRef = BA73D6711A735A40005B852D /* sport24.png */; };
 		BA73D69A1A735A40005B852D /* sport25.png in Resources */ = {isa = PBXBuildFile; fileRef = BA73D6721A735A40005B852D /* sport25.png */; };
+		F376CCE91A7399B7002E939C /* startButton_.png in Resources */ = {isa = PBXBuildFile; fileRef = F376CCE71A7399B7002E939C /* startButton_.png */; };
+		F376CCEA1A7399B7002E939C /* startButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F376CCE81A7399B7002E939C /* startButton.png */; };
 		F3C570C01A73658800D186AA /* GameStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C570BF1A73658800D186AA /* GameStart.swift */; };
 		F3DEE4CB1A73879D0002532A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DEE4CA1A73879D0002532A /* ActionButton.swift */; };
 /* End PBXBuildFile section */
@@ -120,6 +122,8 @@
 		BA73D6701A735A40005B852D /* sport23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sport23.png; sourceTree = "<group>"; };
 		BA73D6711A735A40005B852D /* sport24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sport24.png; sourceTree = "<group>"; };
 		BA73D6721A735A40005B852D /* sport25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sport25.png; sourceTree = "<group>"; };
+		F376CCE71A7399B7002E939C /* startButton_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButton_.png; sourceTree = "<group>"; };
+		F376CCE81A7399B7002E939C /* startButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButton.png; sourceTree = "<group>"; };
 		F3C570BF1A73658800D186AA /* GameStart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStart.swift; sourceTree = "<group>"; };
 		F3DEE4CA1A73879D0002532A /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,15 +168,15 @@
 			isa = PBXGroup;
 			children = (
 				F3DEE4CA1A73879D0002532A /* ActionButton.swift */,
-				BA73D64A1A735A40005B852D /* images */,
 				BA73D5F11A734B54005B852D /* AppDelegate.swift */,
 				BA73D5F51A734B54005B852D /* GameScene.swift */,
 				BA73D5F71A734B54005B852D /* GameViewController.swift */,
 				BA73D5F91A734B54005B852D /* Main.storyboard */,
 				BA73D5FC1A734B54005B852D /* Images.xcassets */,
 				BA73D5FE1A734B54005B852D /* LaunchScreen.xib */,
-				BA73D5EF1A734B54005B852D /* Supporting Files */,
 				F3C570BF1A73658800D186AA /* GameStart.swift */,
+				BA73D5EF1A734B54005B852D /* Supporting Files */,
+				BA73D64A1A735A40005B852D /* images */,
 			);
 			path = WhatDoWeDoNow;
 			sourceTree = "<group>";
@@ -207,6 +211,8 @@
 			children = (
 				BA73D64B1A735A40005B852D /* sport01.png */,
 				BA73D64C1A735A40005B852D /* sport01_.png */,
+				F376CCE71A7399B7002E939C /* startButton_.png */,
+				F376CCE81A7399B7002E939C /* startButton.png */,
 				BA73D64D1A735A40005B852D /* sport02.png */,
 				BA73D64E1A735A40005B852D /* sport02_.png */,
 				BA73D64F1A735A40005B852D /* sport03.png */,
@@ -334,6 +340,7 @@
 				BA73D6851A735A40005B852D /* sport10.png in Resources */,
 				BA73D6771A735A40005B852D /* sport03.png in Resources */,
 				BA73D68C1A735A40005B852D /* sport13_.png in Resources */,
+				F376CCEA1A7399B7002E939C /* startButton.png in Resources */,
 				BA73D6981A735A40005B852D /* sport23.png in Resources */,
 				BA73D67D1A735A40005B852D /* sport06.png in Resources */,
 				BA73D68D1A735A40005B852D /* sport14.png in Resources */,
@@ -345,6 +352,7 @@
 				BA73D6871A735A40005B852D /* sport11.png in Resources */,
 				BA73D67E1A735A40005B852D /* sport06_.png in Resources */,
 				BA73D6941A735A40005B852D /* sport19.png in Resources */,
+				F376CCE91A7399B7002E939C /* startButton_.png in Resources */,
 				BA73D6831A735A40005B852D /* sport09.png in Resources */,
 				BA73D68E1A735A40005B852D /* sport14_.png in Resources */,
 				BA73D6891A735A40005B852D /* sport12.png in Resources */,

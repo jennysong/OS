@@ -26,8 +26,7 @@ class GameStart: SKScene {
         addChild(sb)
         
         
-        
-        
+
     }
 
     required init?(coder aDecoder: NSCoder) {
