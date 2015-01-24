@@ -10,7 +10,8 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    let sport01 = SKSpriteNode(imageNamed: "sport01")
+    let sport01:ActionButton = ActionButton(defaultButtonImage: "sport01", activeButtonImage: "sport01_", buttonAction: donothing())
+//    let sport01 = SKSpriteNode(imageNamed: "sport01")
     let sport02 = SKSpriteNode(imageNamed: "sport02")
     let sport03 = SKSpriteNode(imageNamed: "sport03")
     let sport04 = SKSpriteNode(imageNamed: "sport04")
@@ -26,7 +27,8 @@ class GameScene: SKScene {
     let sport14 = SKSpriteNode(imageNamed: "sport14")
     let sport15 = SKSpriteNode(imageNamed: "sport15")
 
-
+    func donothing() -> void {
+    }
     
     override func didMoveToView(view: SKView) {
         backgroundColor = SKColor.whiteColor()
