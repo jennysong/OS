@@ -163,6 +163,7 @@
 			children = (
 				BA73D64A1A735A40005B852D /* images */,
 				BA73D5F11A734B54005B852D /* AppDelegate.swift */,
+				BA80C8331A7377CA00E3E3AC /* ActionButton.swift */,
 				BA73D5F51A734B54005B852D /* GameScene.swift */,
 				BA73D5F71A734B54005B852D /* GameViewController.swift */,
 				BA73D5F91A734B54005B852D /* Main.storyboard */,
@@ -390,6 +391,7 @@
 				BA73D5F81A734B54005B852D /* GameViewController.swift in Sources */,
 				F3C570C01A73658800D186AA /* GameStart.swift in Sources */,
 				BA73D5F21A734B54005B852D /* AppDelegate.swift in Sources */,
+				BA80C8341A7377CA00E3E3AC /* ActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
