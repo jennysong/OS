@@ -69,7 +69,7 @@ class GameScene: SKScene {
     }
     
 }
-
+// shawn ßtest
 func donothing1(){
     if(check(sport01, ))
 }
