@@ -14,14 +14,18 @@ class GameStart: SKScene {
      var level: Level!
     override init(size: CGSize) {
         super.init(size: size)
-        let background = SKSpriteNode(imageNamed: "background")
-//        let sb = UIButton()
-//        sb.setTitle("Start", forState: .Normal)
-//        sb.setTitleColor(UIColor.blueColor(), forState: .Normal)
-        let sb:ActionButton = ActionButton(defaultButtonImage: "startButton", activeButtonImage: "starButton_", buttonAction: donothing)
-        sb.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
+        var background = SKSpriteNode(imageNamed: "background")
+        background.size.height = self.size.height
+        background.size.width = self.size.width
+        background.anchorPoint = CGPoint(x:0, y:0)
+        let startButton:ActionButton = ActionButton(defaultButtonImage: "startButton1", activeButtonImage: "startButton_1", buttonAction: donothing)
+        startButton.position = CGPoint(x: size.width * 0.8, y: size.height * 0.3)
+        let levelButton:ActionButton = ActionButton(defaultButtonImage: "levelButton1", activeButtonImage: "levelButton_1", buttonAction: donothing)
+        levelButton.position = CGPoint(x: size.width * 0.8, y: size.height * 0.15)
+
         addChild(background)
-        addChild(sb)
+        addChild(startButton)
+        addChild(levelButton)
         
         
 
