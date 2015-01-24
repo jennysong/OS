@@ -25,13 +25,20 @@ class Level {
     }
     private func createInitialSports() -> Set<Sport> {
         var set = Set<Sport>()
-        var shuffleArray = Array(count: 0, repeatedValue: 42)
+        var shuffleArray = Array(count: 15, repeatedValue: 0)
         var num = 0
         // 1
         for row in 0..<NumRows {
             for column in 0..<NumColumns {
-//                println("row = \(row) column = \(column)")
-                // 2
+                num = Int(arc4random_uniform(15))
+                while(true){
+                    if(shuffleArray[num] == 0){
+                        shuffleArray[num] = 1
+                        break;
+                    }
+                    num = (num + 1) % 15
+                }
+                
                 var sportType = SportType(rawValue: Int(num) + 1)!
                 
                 // 3
