@@ -11,9 +11,7 @@ import SpriteKit
 import UIKit
 
 class GameStart: SKScene {
-    var label1 = SKLabelNode()
-    var label2 = SKLabelNode()
-    
+     var level: Level!
     override init(size: CGSize) {
         super.init(size: size)
         let background = SKSpriteNode(imageNamed: "background")

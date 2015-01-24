@@ -11,6 +11,16 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    override func shouldAutorotate() -> Bool {
+        return true
+    }
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let scene = GameStart(size: view.bounds.size)
@@ -18,11 +28,7 @@ class GameViewController: UIViewController {
         //skView.showsFPS = true
         //skView.showsNodeCount = true
         skView.ignoresSiblingOrder = true
-        scene.scaleMode = .ResizeFill
+        scene.scaleMode = .AspectFill
         skView.presentScene(scene)
-    }
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true
     }
 }
