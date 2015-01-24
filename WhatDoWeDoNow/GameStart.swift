@@ -16,16 +16,15 @@ class GameStart: SKScene {
     
     override init(size: CGSize) {
         super.init(size: size)
-        backgroundColor = SKColor.whiteColor()
+        let background = SKSpriteNode(imageNamed: "background")
+//        let sb = UIButton()
+//        sb.setTitle("Start", forState: .Normal)
+//        sb.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        let sb:ActionButton = ActionButton(defaultButtonImage: "startButton", activeButtonImage: "starButton_", buttonAction: donothing)
+        sb.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
+        addChild(background)
+        addChild(sb)
         
-        label1 = mkLabel("What Do We Do Now ?", 30, SKColor.blackColor(), CGPoint(x: size.width * 0.5, y: size.height * 0.8))
-        let sb = UIButton()
-        sb.setTitle("Start", forState: .Normal)
-        sb.setTitleColor(UIColor.blueColor(), forState: .Normal)
-        
-        label2 = mkLabel("Start", 20, SKColor.blackColor(), CGPoint(x: size.width  * 0.5, y: size.height * 0.5))
-        addChild(label1)
-        addChild(label2)
         
         
         
@@ -34,16 +33,13 @@ class GameStart: SKScene {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        /* Called when a touch begins */
+    func donothing(){
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
             let scene = GameScene(size: self.size)
             self.view?.presentScene(scene, transition: revel)
             }]))
     }
-
     
 }
 

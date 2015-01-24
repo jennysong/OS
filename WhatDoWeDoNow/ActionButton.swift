@@ -15,16 +15,19 @@ class ActionButton: SKNode {
     var action: () -> Void
     
     init(defaultButtonImage: String, activeButtonImage: String, buttonAction: () -> Void) {
+        
         defaultButton = SKSpriteNode(imageNamed: defaultButtonImage)
         activeButton  = SKSpriteNode(imageNamed: activeButtonImage)
         activeButton.hidden = true
         action = buttonAction
-        
         super.init()
+        
+        
         
         userInteractionEnabled = true
         addChild(defaultButton)
         addChild(activeButton)
+        
     }
 
     
@@ -35,6 +38,7 @@ class ActionButton: SKNode {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         activeButton.hidden = false
         defaultButton.hidden = true
+        action()
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {

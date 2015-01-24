@@ -64,6 +64,8 @@ class GameScene: SKScene {
         
     }
     
-    
-    
+}
+
+func donothing(){
+    println("hello")
 }
