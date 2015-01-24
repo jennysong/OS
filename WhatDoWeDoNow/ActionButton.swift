@@ -30,4 +30,14 @@ class ActionButton: SKNode {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        activeButton.hidden = false
+        defaultButton.hidden = true
+    }
+    
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        activeButton.hidden = true
+        defaultButton.hidden = false
+    }
 }

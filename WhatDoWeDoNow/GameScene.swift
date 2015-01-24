@@ -10,7 +10,8 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    let sport01 = SKSpriteNode(imageNamed: "sport01")
+    let sport01:ActionButton = ActionButton(defaultButtonImage: "sport01", activeButtonImage: "sport01_", buttonAction: donothing())
+//    let sport01 = SKSpriteNode(imageNamed: "sport01")
     let sport02 = SKSpriteNode(imageNamed: "sport02")
     let sport03 = SKSpriteNode(imageNamed: "sport03")
     let sport04 = SKSpriteNode(imageNamed: "sport04")
@@ -26,7 +27,8 @@ class GameScene: SKScene {
     let sport14 = SKSpriteNode(imageNamed: "sport14")
     let sport15 = SKSpriteNode(imageNamed: "sport15")
 
-
+    func donothing() -> void {
+    }
     
     override func didMoveToView(view: SKView) {
         backgroundColor = SKColor.whiteColor()
@@ -63,24 +65,5 @@ class GameScene: SKScene {
         
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        for touch: AnyObject in touches {
-            let touchLocation = touch.locationInNode(self)
-            let touchedNode = nodeAtPoint(touchLocation);
-            touchedNode.hidden = true
-            println(touchedNode)
-            if let spriteNode = node as? SKSpriteN  ode {
-                println(spriteNode.texture)
-            }
-            
-           /*
-            let touchedSpriteArray = gameLogic.sprites.filter { $0.sprite === touchedNode };
-            if touchedSpriteArray.count > 0
-            {   // if we touched a tile, fire its tap event
-                touchedSpriteArray[0].onTap();
-            }*/
-        }
-    }
-
     
 }
