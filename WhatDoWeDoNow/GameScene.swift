@@ -21,10 +21,20 @@ class GameScene: SKScene {
     var selectionSprite = SKSpriteNode()
     var sportsarray = Array<Sport>()
     var numOfTap: Int = 0
+    var player:Int = 1
+    var player1 = SKSpriteNode(imageNamed: "player1")
+    var player2 = SKSpriteNode(imageNamed: "player2")
+    
     
     
     override init(size: CGSize) {
         super.init(size: size)
+        player1.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
+        player2.position = CGPoint(x:self.size.width*0.35, y:self.size.height*0.48)
+        addChild(player1)
+        player1.hidden = false
+        addChild(player2)
+        player2.hidden = true
         anchorPoint = CGPoint(x: 0.5, y:0.45)
 //        let background = SKSpriteNode(imageNamed: "Background")
         backgroundColor = SKColor.blackColor()
@@ -70,6 +80,7 @@ class GameScene: SKScene {
         
         let (success, column, row) = touchPoint(location)
         if success {
+            runAction(SKAction.playSoundFileNamed("button.wav", waitForCompletion: false))
             if let sport = level.sportAtColumn(column,  row: row){
             showSelectionIndicatorForSport(sport)
                 
@@ -123,7 +134,7 @@ class GameScene: SKScene {
         println("sportarray count = \(sportsarray.endIndex)")
         
         if(sportsarray.count == 0){
-            println("start")
+            println("start: Player \(player)")
             return true
         }
         if(sportsarray.count == numOfTap){ // first add to the array and every last turn
@@ -141,22 +152,18 @@ class GameScene: SKScene {
     }
     
     
-    func lost(){
-        println("you lost!")
-    }
-    
-    func win(){
-        println("you won!")
-    }
-    
     func bothWin(){
         println("both won!")
         reset()
-        switchSceneToResults("BothWon")
+        switchSceneToResults("bothWon")
     }
     
     func nextTurn(){
-        println("next turn!")
+        runAction(SKAction.playSoundFileNamed("change.wav", waitForCompletion: false))
+        if (player == 1) { player = 2}
+        else { player = 1}
+        println("next turn!: player \(player)")
+        showPlayer()
         if selectionSprite.parent != nil {
             selectionSprite.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))        }
         numOfTap = 0
@@ -166,6 +173,7 @@ class GameScene: SKScene {
     func reset(){
         println("reset")
         numOfTap = 0
+        player = 1
         sportsarray = []
         if selectionSprite.parent != nil {
             selectionSprite.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))
@@ -173,9 +181,11 @@ class GameScene: SKScene {
     }
     
     func whoWon(){
-        println("someone won")
+        if (player == 1) { player = 2}
+        else { player = 1}
+        println("player\(player) won")
+        switchSceneToResults("\(player)Won")
         reset()
-        switchSceneToResults("someoneWon")
     }
     
 
@@ -187,6 +197,20 @@ class GameScene: SKScene {
             self.view?.presentScene(scene, transition:reveal)
             }
             ]))
+    }
+    
+    func showPlayer(){
+        println("next turn!: player \(player)")
+        if (player == 1){
+            player2.hidden = true
+            player1.hidden = false
+        }
+        else {
+            player1.hidden = true
+            player2.hidden = false
+            
+        }
+
     }
     
     

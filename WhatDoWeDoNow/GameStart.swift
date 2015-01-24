@@ -9,11 +9,39 @@
 import Foundation
 import SpriteKit
 import UIKit
+import AVFoundation
+
+var backgroundMusicPlayer: AVAudioPlayer!
+
+func playBackgroundMusic(filename: String) {
+    let url = NSBundle.mainBundle().URLForResource(
+        filename, withExtension: nil)
+    if (url == nil) {
+        println("Could not find file: \(filename)")
+        return
+    }
+    
+    var error: NSError? = nil
+    backgroundMusicPlayer =
+        AVAudioPlayer(contentsOfURL: url, error: &error)
+    if backgroundMusicPlayer == nil {
+        println("Could not create audio player: \(error!)")
+        return
+    }
+    
+    backgroundMusicPlayer.numberOfLoops = -1
+    backgroundMusicPlayer.prepareToPlay()
+    backgroundMusicPlayer.play()
+}
+
+
 
 class GameStart: SKScene {
      var level: Level!
     override init(size: CGSize) {
         super.init(size: size)
+        //playBackgroundMusic("puyo.caf")
+        //runAction(SKAction.playSoundFileNamed("start.mp3", waitForCompletion: false))
         var background = SKSpriteNode(imageNamed: "background")
         background.size.height = self.size.height
         background.size.width = self.size.width

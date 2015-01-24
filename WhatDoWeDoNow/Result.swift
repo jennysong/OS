@@ -16,10 +16,11 @@ class Result: SKScene {
     init(size: CGSize, string: String) {
         super.init(size: size)
         var background = SKSpriteNode(imageNamed: string + "Background")
-        //        let sb = UIButton()
-        //        sb.setTitle("Start", forState: .Normal)
-        //        sb.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        background.size.height = self.size.height
+        background.size.width = self.size.width
+        background.anchorPoint = CGPoint(x:0, y:0)
         addChild(background)
+        runAction(SKAction.playSoundFileNamed("tada.wav", waitForCompletion: false))
         runAction(SKAction.sequence([SKAction.waitForDuration(2.0),SKAction.runBlock(){
             let reveal = SKTransition.flipHorizontalWithDuration(0.2)
             let scene = GameStart(size: self.size)
