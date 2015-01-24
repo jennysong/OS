@@ -93,7 +93,6 @@ func donothing2(){
         if (sportsarrayCount == numOfTap) {
             sportsarray.append(sport02)
             sportsarrayCount++
-            println("sportarray\(sportsarray[numOfTap])")
             numOfTap == 0
             nextTurn()
             return
@@ -107,10 +106,12 @@ func donothing2(){
 
 func donothing3(){
     if (checkCorrect(sport03)){
-        if (sportsarray.count == numOfTap) {
-            sportsarray += [sport03]
+        if (sportsarrayCount == numOfTap) {
+            sportsarray.append(sport03)
+            sportsarrayCount++
             numOfTap == 0
             nextTurn()
+            return
         }
         numOfTap++
     } else {
@@ -121,10 +122,12 @@ func donothing3(){
 
 func donothing4(){
     if (checkCorrect(sport04)){
-        if (sportsarray.count == numOfTap) {
-            sportsarray += [sport04]
+        if (sportsarrayCount == numOfTap) {
+            sportsarray.append(sport04)
+            sportsarrayCount++
             numOfTap == 0
             nextTurn()
+            return
         }
         numOfTap++
     } else {
@@ -135,10 +138,12 @@ func donothing4(){
 
 func donothing5(){
     if (checkCorrect(sport05)){
-        if (sportsarray.count == numOfTap) {
-            sportsarray += [sport05]
+        if (sportsarrayCount == numOfTap) {
+            sportsarray.append(sport05)
+            sportsarrayCount++
             numOfTap == 0
             nextTurn()
+            return
         }
         numOfTap++
     } else {
@@ -149,10 +154,12 @@ func donothing5(){
 
 func donothing6(){
     if (checkCorrect(sport06)){
-        if (sportsarray.count == numOfTap) {
-            sportsarray += [sport06]
+        if (sportsarrayCount == numOfTap) {
+            sportsarray.append(sport06)
+            sportsarrayCount++
             numOfTap == 0
             nextTurn()
+            return
         }
         numOfTap++
     } else {
@@ -163,10 +170,12 @@ func donothing6(){
 
 func donothing7(){
     if (checkCorrect(sport07)){
-        if (sportsarray.count == numOfTap) {
-            sportsarray += [sport07]
+        if (sportsarrayCount == numOfTap) {
+            sportsarray.append(sport07)
+            sportsarrayCount++
             numOfTap == 0
             nextTurn()
+            return
         }
         numOfTap++
     } else {
@@ -177,10 +186,12 @@ func donothing7(){
 
 func donothing8(){
     if (checkCorrect(sport08)){
-        if (sportsarray.count == numOfTap) {
-            sportsarray += [sport08]
+        if (sportsarrayCount == numOfTap) {
+            sportsarray.append(sport08)
+            sportsarrayCount++
             numOfTap == 0
             nextTurn()
+            return
         }
         numOfTap++
     } else {
@@ -191,10 +202,12 @@ func donothing8(){
 
 func donothing9(){
     if (checkCorrect(sport09)){
-        if (sportsarray.count == numOfTap) {
-            sportsarray += [sport09]
+        if (sportsarrayCount == numOfTap) {
+            sportsarray.append(sport09)
+            sportsarrayCount++
             numOfTap == 0
             nextTurn()
+            return
         }
         numOfTap++
     } else {
@@ -205,10 +218,12 @@ func donothing9(){
 
 func donothing10(){
     if (checkCorrect(sport10)){
-        if (sportsarray.count == numOfTap) {
-            sportsarray += [sport10]
+        if (sportsarrayCount == numOfTap) {
+            sportsarray.append(sport10)
+            sportsarrayCount++
             numOfTap == 0
             nextTurn()
+            return
         }
         numOfTap++
     } else {
@@ -219,11 +234,12 @@ func donothing10(){
 
 func donothing11(){
     if (checkCorrect(sport11)){
-        if (sportsarray.count == numOfTap) {
-            println("hello!!")
-            sportsarray.insert(sport11, atIndex: numOfTap)
+        if (sportsarrayCount == numOfTap) {
+            sportsarray.append(sport11)
+            sportsarrayCount++
             numOfTap == 0
             nextTurn()
+            return
         }
         numOfTap++
     } else {
@@ -234,10 +250,12 @@ func donothing11(){
 
 func donothing12(){
     if (checkCorrect(sport12)){
-        if (sportsarray.count == numOfTap) {
-            sportsarray += [sport12]
+        if (sportsarrayCount == numOfTap) {
+            sportsarray.append(sport12)
+            sportsarrayCount++
             numOfTap == 0
             nextTurn()
+            return
         }
         numOfTap++
     } else {
@@ -248,10 +266,12 @@ func donothing12(){
 
 func donothing13(){
     if (checkCorrect(sport13)){
-        if (sportsarray.count == numOfTap) {
-            sportsarray += [sport13]
+        if (sportsarrayCount == numOfTap) {
+            sportsarray.append(sport13)
+            sportsarrayCount++
             numOfTap == 0
             nextTurn()
+            return
         }
         numOfTap++
     } else {
@@ -262,10 +282,12 @@ func donothing13(){
 
 func donothing14(){
     if (checkCorrect(sport14)){
-        if (sportsarray.count == numOfTap) {
-            sportsarray += [sport14]
+        if (sportsarrayCount == numOfTap) {
+            sportsarray.append(sport14)
+            sportsarrayCount++
             numOfTap == 0
             nextTurn()
+            return
         }
         numOfTap++
     } else {
@@ -276,10 +298,12 @@ func donothing14(){
 
 func donothing15(){
     if (checkCorrect(sport15)){
-        if (sportsarray.count == numOfTap) {
-            sportsarray += [sport15]
+        if (sportsarrayCount == numOfTap) {
+            sportsarray.append(sport15)
+            sportsarrayCount++
             numOfTap == 0
             nextTurn()
+            return
         }
         numOfTap++
     } else {
@@ -295,29 +319,32 @@ func checkCorrect(sport: ActionButton) -> Bool{
     println("sportarray count = \(sportsarray.endIndex)")
     if( sportsarrayCount >= 15) {
         bothWin()
-        println("h1")
+        println("both win")
     }
     if(sportsarrayCount == 0){
-        println("h2")
+        println("start")
         return true
     }
     if(sportsarrayCount == numOfTap){ // first add to the array and every last turn
-        println("h3")
+        println("last turn")
         return true
     }
-    if (sport.defaultButton.anchorPoint == sportsarray[numOfTap].defaultButton.anchorPoint) {
-        println("h4")
+    if (sport.defaultButton.texture == sportsarray[numOfTap].defaultButton.texture) {
+        println("correct")
         return true
     }
     else {
-        println("false")
+        println("wrong")
         return false
    }
 }
 
 func lost(){
     println("you lost!")
-    reset()
+}
+
+func win(){
+    println("you won!")
 }
 
 func bothWin(){
@@ -328,7 +355,7 @@ func bothWin(){
 
 func nextTurn(){
     println("next turn!")
-    reset()
+    numOfTap = 0
     
 }
 
@@ -336,8 +363,10 @@ func reset(){
     println("reset")
     numOfTap = 0
     sportsarray = []
+    sportsarrayCount = 0
 }
 
 func whoWon(){
     println("someone won")
+    reset()
 }
