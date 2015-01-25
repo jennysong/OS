@@ -22,19 +22,37 @@ class GameSceneThree: SKScene {
     var player:Int = 1
     var player1 = SKSpriteNode(imageNamed: "player1")
     var player2 = SKSpriteNode(imageNamed: "player2")
-    
+    var player1bg = SKSpriteNode(imageNamed: "player1bg")
+    var player2bg = SKSpriteNode(imageNamed: "player2bg")
+    let roundCount = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
     
     
     override init(size: CGSize) {
         super.init(size: size)
+        
+        roundCount.text = "Round: "+String(sportsarray.count)
+        roundCount.fontSize = 20
+        roundCount.fontColor = SKColor.whiteColor()
+        roundCount.position = CGPoint(x: self.size.width*0, y: self.size.height*0.45)
+        addChild(roundCount)
+        
         player1.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
         player2.position = CGPoint(x:self.size.width*0.35, y:self.size.height*0.48)
         addChild(player1)
         player1.hidden = false
         addChild(player2)
         player2.hidden = true
+        
         anchorPoint = CGPoint(x: 0.5, y:0.45)
-        //        let background = SKSpriteNode(imageNamed: "Background")
+        
+        player1bg.size.height = self.size.height
+        player1bg.size.width = self.size.width
+        player1bg.position = CGPoint(x:0, y:self.size.height*0.05)
+        
+        player2bg.size.height = self.size.height
+        player2bg.size.width = self.size.width
+        player2bg.position = CGPoint(x:0, y:self.size.height*0.05)
+        
         backgroundColor = SKColor.blackColor()
         addChild(gameLayer)
         let layerPosition = CGPoint(x: -TileWidth * CGFloat(NumColumns) / 2, y: -TileHeight * CGFloat(NumRows) / 2)
@@ -85,6 +103,7 @@ class GameSceneThree: SKScene {
                 if (checkCorrect(sport)){
                     if(sportsarray.count == numOfTap){
                         sportsarray.append(sport)
+                        roundCount.text = "Round: "+String(sportsarray.count)
                         numOfTap == 0
                         nextTurn()
                         return
@@ -161,9 +180,10 @@ class GameSceneThree: SKScene {
         if (player == 1) { player = 2}
         else { player = 1}
         println("next turn!: player \(player)")
-        showPlayer()
+        
         if selectionSprite.parent != nil {
             selectionSprite.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))        }
+        showPlayer()
         numOfTap = 0
         
     }
@@ -200,10 +220,16 @@ class GameSceneThree: SKScene {
     func showPlayer(){
         println("next turn!: player \(player)")
         if (player == 1){
+            addChild(player1bg)
+            player1bg.zPosition = 1000
+            player1bg.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))
             player2.hidden = true
             player1.hidden = false
         }
         else {
+            addChild(player2bg)
+            player2bg.zPosition = 1000
+            player2bg.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))
             player1.hidden = true
             player2.hidden = false
             

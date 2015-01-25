@@ -22,11 +22,19 @@ class GameScene: SKScene {
     var player:Int = 1
     var player1 = SKSpriteNode(imageNamed: "player1")
     var player2 = SKSpriteNode(imageNamed: "player2")
-    
+    var player1bg = SKSpriteNode(imageNamed: "player1bg")
+    var player2bg = SKSpriteNode(imageNamed: "player2bg")
+    let roundCount = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
     
     
     override init(size: CGSize) {
         super.init(size: size)
+        roundCount.text = "Score: "+String(sportsarray.count)
+        roundCount.fontSize = 20
+        roundCount.fontColor = SKColor.whiteColor()
+        roundCount.position = CGPoint(x: self.size.width*0, y: self.size.height*0.45)
+        addChild(roundCount)
+        
         player1.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
         player2.position = CGPoint(x:self.size.width*0.35, y:self.size.height*0.48)
         addChild(player1)
@@ -85,6 +93,7 @@ class GameScene: SKScene {
                 if (checkCorrect(sport)){
                     if(sportsarray.count == numOfTap){
                         sportsarray.append(sport)
+                        roundCount.text = "Score: "+String(sportsarray.count)+"0"
                         numOfTap == 0
                         println("doesn't come here")
                         nextTurn()
