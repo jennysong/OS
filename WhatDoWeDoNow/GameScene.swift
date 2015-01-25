@@ -163,11 +163,14 @@ class GameScene: SKScene {
         runAction(SKAction.playSoundFileNamed("change.wav", waitForCompletion: true))
         if (player == 1) {
             player = 2
+            println("next turn!: player 2")
+            showPlayer()
             botPlay()
         }
-        else { player = 1}
-        println("next turn!: player \(player)")
-        showPlayer()
+        else { player = 1
+            showPlayer()
+            println("next turn!: player 1")}
+        
         if selectionSprite.parent != nil {
             selectionSprite.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))}
         numOfTap = 0
