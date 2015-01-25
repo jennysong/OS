@@ -76,6 +76,8 @@
 		BAA930321A74DE2500B84F85 /* startButton_.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA92FFB1A74DE2500B84F85 /* startButton_.png */; };
 		BAA930331A74DE2500B84F85 /* startButton_1.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA92FFC1A74DE2500B84F85 /* startButton_1.png */; };
 		BAA930351A74E99D00B84F85 /* scoreBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA930341A74E99D00B84F85 /* scoreBackground.png */; };
+		F3B8736E1A74F121009B3ACD /* HighScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8736D1A74F121009B3ACD /* HighScore.swift */; };
+		F3B873701A74F155009B3ACD /* HighScoreManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8736F1A74F155009B3ACD /* HighScoreManger.swift */; };
 		F3B988681A73CC720054A4F1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B988671A73CC720054A4F1 /* Result.swift */; };
 		F3B9886A1A73E4290054A4F1 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B988691A73E4290054A4F1 /* Sport.swift */; };
 		F3B9886C1A73F95F0054A4F1 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B9886B1A73F95F0054A4F1 /* Array2D.swift */; };
@@ -171,6 +173,8 @@
 		BAA92FFB1A74DE2500B84F85 /* startButton_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButton_.png; sourceTree = "<group>"; };
 		BAA92FFC1A74DE2500B84F85 /* startButton_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButton_1.png; sourceTree = "<group>"; };
 		BAA930341A74E99D00B84F85 /* scoreBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreBackground.png; sourceTree = "<group>"; };
+		F3B8736D1A74F121009B3ACD /* HighScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScore.swift; sourceTree = "<group>"; };
+		F3B8736F1A74F155009B3ACD /* HighScoreManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreManger.swift; sourceTree = "<group>"; };
 		F3B988671A73CC720054A4F1 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		F3B988691A73E4290054A4F1 /* Sport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		F3B9886B1A73F95F0054A4F1 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
@@ -251,8 +255,8 @@
 				F3B9886F1A73F9D50054A4F1 /* Level.swift */,
 				BA4603661A744E5900A6A7EB /* sound */,
 				BA73D5EF1A734B54005B852D /* Supporting Files */,
-				F3B873691A74E854009B3ACD /* HighScore.swift */,
-				F3B8736B1A74EA05009B3ACD /* HighScoreManager.swift */,
+				F3B8736D1A74F121009B3ACD /* HighScore.swift */,
+				F3B8736F1A74F155009B3ACD /* HighScoreManger.swift */,
 			);
 			path = WhatDoWeDoNow;
 			sourceTree = "<group>";
@@ -509,14 +513,14 @@
 				F3B9886A1A73E4290054A4F1 /* Sport.swift in Sources */,
 				F3B988681A73CC720054A4F1 /* Result.swift in Sources */,
 				BA73D5F61A734B54005B852D /* GameScene.swift in Sources */,
-				F3B8736A1A74E854009B3ACD /* HighScore.swift in Sources */,
+				F3B8736E1A74F121009B3ACD /* HighScore.swift in Sources */,
 				BA73D5F81A734B54005B852D /* GameViewController.swift in Sources */,
 				F3C570C01A73658800D186AA /* GameStart.swift in Sources */,
 				F3B9886C1A73F95F0054A4F1 /* Array2D.swift in Sources */,
 				BA73D5F21A734B54005B852D /* AppDelegate.swift in Sources */,
 				BAA92FC41A7498B500B84F85 /* GameSceneThree.swift in Sources */,
 				F3DEE4CB1A73879D0002532A /* ActionButton.swift in Sources */,
-				F3B8736C1A74EA05009B3ACD /* HighScoreManager.swift in Sources */,
+				F3B873701A74F155009B3ACD /* HighScoreManger.swift in Sources */,
 				F3B988721A7478560054A4F1 /* GameSceneTwo.swift in Sources */,
 				F3B988701A73F9D50054A4F1 /* Level.swift in Sources */,
 				F3B9886E1A73F9770054A4F1 /* Set.swift in Sources */,
