@@ -46,9 +46,11 @@ class GameScene: SKScene {
         backButton.size.height *= ratio
         backButton.size.width *= ratio
         backButton.position = CGPoint(x:self.size.width*(0.40), y:self.size.height*0.47)
+        backButton.zPosition = 1000
         backButton_.size.height *= ratio
         backButton_.size.width *= ratio
         backButton_.position = CGPoint(x:self.size.width*(0.40), y:self.size.height*0.47)
+        backButton_.zPosition = 1000
         println("here is back button")
         let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToStart)
         addChild(goBack)

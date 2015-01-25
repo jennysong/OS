@@ -107,7 +107,6 @@
 /* Begin PBXFileReference section */
 		BA46036D1A74503C00A6A7EB /* button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button.wav; sourceTree = "<group>"; };
 		BA46036F1A7450E000A6A7EB /* change.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = change.wav; sourceTree = "<group>"; };
-		BA4603711A7451D400A6A7EB /* puyo.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = puyo.caf; sourceTree = "<group>"; };
 		BA4603721A74535A00A6A7EB /* button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button.wav; sourceTree = "<group>"; };
 		BA4603741A7453B000A6A7EB /* tada.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tada.wav; sourceTree = "<group>"; };
 		BA73D5EC1A734B54005B852D /* WhatDoWeDoNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatDoWeDoNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,7 +220,6 @@
 				BAFE97C21A758C7A00BC8181 /* quizSound.mp3 */,
 				BA4603741A7453B000A6A7EB /* tada.wav */,
 				BA4603721A74535A00A6A7EB /* button.wav */,
-				BA4603711A7451D400A6A7EB /* puyo.caf */,
 				BA46036F1A7450E000A6A7EB /* change.wav */,
 				BA46036D1A74503C00A6A7EB /* button.wav */,
 			);
