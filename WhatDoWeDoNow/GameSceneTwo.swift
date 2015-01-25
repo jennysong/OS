@@ -41,7 +41,7 @@ class GameSceneTwo: SKScene {
         sportsLayer.position = layerPosition
         gameLayer.addChild(sportsLayer)
         
-        level = Level(lv: 2)
+        level = Level()
         beginGame()
     }
 

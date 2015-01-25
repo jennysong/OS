@@ -74,6 +74,7 @@
 		BAA92FBE1A746A9C00B84F85 /* blackBG.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA92FBD1A746A9C00B84F85 /* blackBG.png */; };
 		BAA92FC11A746D7A00B84F85 /* player1bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA92FBF1A746D7A00B84F85 /* player1bg.png */; };
 		BAA92FC21A746D7A00B84F85 /* player2bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA92FC01A746D7A00B84F85 /* player2bg.png */; };
+		BAA92FC41A7498B500B84F85 /* GameSceneThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA92FC31A7498B500B84F85 /* GameSceneThree.swift */; };
 		F3B988681A73CC720054A4F1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B988671A73CC720054A4F1 /* Result.swift */; };
 		F3B9886A1A73E4290054A4F1 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B988691A73E4290054A4F1 /* Sport.swift */; };
 		F3B9886C1A73F95F0054A4F1 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B9886B1A73F95F0054A4F1 /* Array2D.swift */; };
@@ -167,6 +168,7 @@
 		BAA92FBD1A746A9C00B84F85 /* blackBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackBG.png; sourceTree = "<group>"; };
 		BAA92FBF1A746D7A00B84F85 /* player1bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player1bg.png; sourceTree = "<group>"; };
 		BAA92FC01A746D7A00B84F85 /* player2bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player2bg.png; sourceTree = "<group>"; };
+		BAA92FC31A7498B500B84F85 /* GameSceneThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneThree.swift; sourceTree = "<group>"; };
 		F3B988671A73CC720054A4F1 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		F3B988691A73E4290054A4F1 /* Sport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		F3B9886B1A73F95F0054A4F1 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				BA73D5F11A734B54005B852D /* AppDelegate.swift */,
 				BA73D5F51A734B54005B852D /* GameScene.swift */,
 				F3B988711A7478560054A4F1 /* GameSceneTwo.swift */,
+				BAA92FC31A7498B500B84F85 /* GameSceneThree.swift */,
 				BA73D5F71A734B54005B852D /* GameViewController.swift */,
 				BA73D5F91A734B54005B852D /* Main.storyboard */,
 				BA73D5FC1A734B54005B852D /* Images.xcassets */,
@@ -504,6 +507,7 @@
 				F3C570C01A73658800D186AA /* GameStart.swift in Sources */,
 				F3B9886C1A73F95F0054A4F1 /* Array2D.swift in Sources */,
 				BA73D5F21A734B54005B852D /* AppDelegate.swift in Sources */,
+				BAA92FC41A7498B500B84F85 /* GameSceneThree.swift in Sources */,
 				F3DEE4CB1A73879D0002532A /* ActionButton.swift in Sources */,
 				F3B988721A7478560054A4F1 /* GameSceneTwo.swift in Sources */,
 				F3B988701A73F9D50054A4F1 /* Level.swift in Sources */,

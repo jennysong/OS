@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class GameScene: SKScene {
+class GameSceneThree: SKScene {
     var level: Level!
     
     let gameLayer = SKNode()
@@ -86,9 +86,7 @@ class GameScene: SKScene {
                     if(sportsarray.count == numOfTap){
                         sportsarray.append(sport)
                         numOfTap == 0
-                        println("doesn't come here")
                         nextTurn()
-                        
                         return
                     }
                     numOfTap++
@@ -160,15 +158,12 @@ class GameScene: SKScene {
     
     func nextTurn(){
         runAction(SKAction.playSoundFileNamed("change.wav", waitForCompletion: false))
-        if (player == 1) {
-            player = 2
-            botPlay()
-        }
+        if (player == 1) { player = 2}
         else { player = 1}
         println("next turn!: player \(player)")
         showPlayer()
         if selectionSprite.parent != nil {
-            selectionSprite.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))}
+            selectionSprite.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))        }
         numOfTap = 0
         
     }
@@ -203,6 +198,7 @@ class GameScene: SKScene {
     }
     
     func showPlayer(){
+        println("next turn!: player \(player)")
         if (player == 1){
             player2.hidden = true
             player1.hidden = false
@@ -213,20 +209,6 @@ class GameScene: SKScene {
             
         }
         
-    }
-    
-    func botPlay() {
-        showPlayer()
-        println("bot is playing")
-        for i in 0 ... (sportsarray.count - 1) {
-            println(sportsarray[i]) //later change this to highlight.
-        }
-        var randomColumn = Int(arc4random_uniform(5))
-        var randomRow = Int(arc4random_uniform(3))
-        var randomSport = level.sportAtColumn(randomColumn, row: randomRow)
-        sportsarray.append(randomSport!)
-        println("added\(randomSport!)")
-        nextTurn()
     }
     
     

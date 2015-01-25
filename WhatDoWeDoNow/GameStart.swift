@@ -37,8 +37,8 @@ func playBackgroundMusic(filename: String) {
 
 
 class GameStart: SKScene {
-    var level: Level!
-    var lv = 1
+    //var level: Level!
+    //var lv = 1
     override init(size: CGSize) {
         super.init(size: size)
         //playBackgroundMusic("puyo.caf")
@@ -49,10 +49,10 @@ class GameStart: SKScene {
         background.anchorPoint = CGPoint(x:0, y:0)
         let startButton:ActionButton = ActionButton(defaultButtonImage: "startButton1", activeButtonImage: "startButton_1", buttonAction: changeScene)
         startButton.position = CGPoint(x: size.width * 0.8, y: size.height * 0.35)
-        let levelButton:ActionButton = ActionButton(defaultButtonImage: "levelButton1", activeButtonImage: "levelButton_1", buttonAction: changeScene)
+        let levelButton:ActionButton = ActionButton(defaultButtonImage: "levelButton1", activeButtonImage: "levelButton_1", buttonAction: changeSceneTwo)
         levelButton.position = CGPoint(x: size.width * 0.8, y: size.height * 0.25)
         
-        let howToPlayButton:ActionButton = ActionButton(defaultButtonImage: "howToPlayButton1", activeButtonImage: "howToPlayButton_1", buttonAction: chagneLevel)
+        let howToPlayButton:ActionButton = ActionButton(defaultButtonImage: "howToPlayButton1", activeButtonImage: "howToPlayButton_1", buttonAction: changeSceneThree)
         levelButton.position = CGPoint(x: size.width * 0.8, y: size.height * 0.15)
         
         addChild(background)
@@ -69,20 +69,25 @@ class GameStart: SKScene {
     func changeScene(){
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
-            if self.lv == 1 {                                   //1: easy mode
-                let scene = GameScene(size: self.size)
-                self.view?.presentScene(scene, transition: revel)
-            } else if self.lv == 2 {                            //2: moderate mode
-                let scene = GameSceneTwo(size: self.size)
-                self.view?.presentScene(scene, transition: revel)
-            }
-            
+            let scene = GameScene(size: self.size)
+            self.view?.presentScene(scene, transition: revel)
             }]))
     }
-    func chagneLevel(){
-        lv = (lv + 1) % 2 + 1
+
+    func changeSceneTwo(){
+        runAction(SKAction.sequence([SKAction.runBlock() {
+            let revel = SKTransition.flipHorizontalWithDuration(0.5)
+            let scene = GameSceneTwo(size: self.size)
+            self.view?.presentScene(scene, transition: revel)
+            }]))
     }
-    
+    func changeSceneThree(){
+        runAction(SKAction.sequence([SKAction.runBlock() {
+            let revel = SKTransition.flipHorizontalWithDuration(0.5)
+            let scene = GameSceneThree(size: self.size)
+            self.view?.presentScene(scene, transition: revel)
+            }]))
+    }
 }
 
 func mkLabel(s: String, si: CGFloat, cr: SKColor, po: CGPoint) -> SKLabelNode {
