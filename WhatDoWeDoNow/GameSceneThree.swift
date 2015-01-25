@@ -14,12 +14,27 @@ class GameSceneThree: SKScene {
     override init(size: CGSize) {
         super.init(size: size)
         
-        //let goBack:ActionButton = ActionButton(defaultButtonImage: "goBackToStart", activeButtonImage: "goBackToStart_", buttonAction: goBackToStart)
-        //goBack.position = CGPoint(x: size.width * 0.35, y: size.height * 0.48)
-        //addChild(goBack)
-
-        anchorPoint = CGPoint(x: 0.5, y:0.45)
-        backgroundColor = SKColor.blackColor()
+        let ratio = 1/self.size.height*195
+        
+        
+        var infoBackground = SKSpriteNode(imageNamed: "infoBackground")
+        infoBackground.size.height = self.size.height
+        infoBackground.size.width = self.size.width
+        infoBackground.anchorPoint = CGPoint(x:0, y:0)
+        addChild(infoBackground)
+        
+        
+        var backButton = SKSpriteNode(imageNamed: "backButton")
+        backButton.size.height *= ratio
+        backButton.size.width *= ratio
+        backButton.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.9)
+        var backButton_ = SKSpriteNode(imageNamed: "backButton_")
+        backButton_.size.height *= ratio
+        backButton_.size.width *= ratio
+        backButton_.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.9)
+        println("here is back button")
+        let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToStart)
+        addChild(goBack)
         
     }
     

@@ -24,8 +24,9 @@ class GameSceneTwo: SKScene {
     var player2 = SKSpriteNode(imageNamed: "player2")
     var player1bg = SKSpriteNode(imageNamed: "player1bg")
     var player2bg = SKSpriteNode(imageNamed: "player2bg")
-    let roundCount = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
-    
+    let roundCount = SKLabelNode(fontNamed: "ChalkboardSE-Light")
+    var backButton = SKSpriteNode(imageNamed: "backButton")
+    var backButton_ = SKSpriteNode(imageNamed: "backButton_")
     
     override init(size: CGSize) {
         super.init(size: size)
@@ -36,12 +37,26 @@ class GameSceneTwo: SKScene {
         roundCount.position = CGPoint(x: self.size.width*0, y: self.size.height*0.45)
         addChild(roundCount)
         
-        //let goBack:ActionButton = ActionButton(defaultButtonImage: "goBackToStart", activeButtonImage: "goBackToStart_", buttonAction: goBackToStart)
-        //goBack.position = CGPoint(x: size.width * 0.35, y: size.height * 0.48)
-        //addChild(goBack)
+        let ratio = 1/self.size.height*195
         
+        
+        backButton.size.height *= ratio
+        backButton.size.width *= ratio
+        backButton.position = CGPoint(x:self.size.width*(0.40), y:self.size.height*0.47)
+        backButton_.size.height *= ratio
+        backButton_.size.width *= ratio
+        backButton_.position = CGPoint(x:self.size.width*(0.40), y:self.size.height*0.47)
+        println("here is back button")
+        let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToStart)
+        addChild(goBack)
+        
+        player1.size.height *= ratio
+        player1.size.width *= ratio
         player1.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
+        player2.size.height *= ratio
+        player2.size.width *= ratio
         player2.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
+        
         addChild(player1)
         player1.hidden = false
         addChild(player2)

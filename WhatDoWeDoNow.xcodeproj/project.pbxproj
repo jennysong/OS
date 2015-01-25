@@ -76,6 +76,10 @@
 		BAA930401A74F5BB00B84F85 /* buttonHowTo_.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA9303E1A74F5BB00B84F85 /* buttonHowTo_.png */; };
 		BAA930411A74F5BB00B84F85 /* buttonHowTo.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA9303F1A74F5BB00B84F85 /* buttonHowTo.png */; };
 		BAFE97B71A7553CD00BC8181 /* backgroundTalkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFE97B61A7553CD00BC8181 /* backgroundTalkbox.png */; };
+		BAFE97BA1A7561EB00BC8181 /* backButton_.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFE97B81A7561EB00BC8181 /* backButton_.png */; };
+		BAFE97BB1A7561EB00BC8181 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFE97B91A7561EB00BC8181 /* backButton.png */; };
+		BAFE97BD1A756AAF00BC8181 /* singleMode.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFE97BC1A756AAF00BC8181 /* singleMode.png */; };
+		BAFE97BF1A756FFB00BC8181 /* infoBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFE97BE1A756FFB00BC8181 /* infoBackground.png */; };
 		F3B873721A74FC9E009B3ACD /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B873711A74FC9E009B3ACD /* Score.swift */; };
 		F3B873741A74FCF3009B3ACD /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B873731A74FCF3009B3ACD /* ScoreManager.swift */; };
 		F3B988681A73CC720054A4F1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B988671A73CC720054A4F1 /* Result.swift */; };
@@ -173,6 +177,10 @@
 		BAA9303E1A74F5BB00B84F85 /* buttonHowTo_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonHowTo_.png; sourceTree = "<group>"; };
 		BAA9303F1A74F5BB00B84F85 /* buttonHowTo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonHowTo.png; sourceTree = "<group>"; };
 		BAFE97B61A7553CD00BC8181 /* backgroundTalkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTalkbox.png; sourceTree = "<group>"; };
+		BAFE97B81A7561EB00BC8181 /* backButton_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton_.png; sourceTree = "<group>"; };
+		BAFE97B91A7561EB00BC8181 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
+		BAFE97BC1A756AAF00BC8181 /* singleMode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = singleMode.png; sourceTree = "<group>"; };
+		BAFE97BE1A756FFB00BC8181 /* infoBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoBackground.png; path = images/infoBackground.png; sourceTree = "<group>"; };
 		F3B873711A74FC9E009B3ACD /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Score.swift; path = images/Score.swift; sourceTree = "<group>"; };
 		F3B873731A74FCF3009B3ACD /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		F3B988671A73CC720054A4F1 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -236,6 +244,7 @@
 		BA73D5EE1A734B54005B852D /* WhatDoWeDoNow */ = {
 			isa = PBXGroup;
 			children = (
+				BAFE97BE1A756FFB00BC8181 /* infoBackground.png */,
 				BAA92FC51A74DE2500B84F85 /* images */,
 				F3DEE4CA1A73879D0002532A /* ActionButton.swift */,
 				F3B873711A74FC9E009B3ACD /* Score.swift */,
@@ -288,6 +297,9 @@
 		BAA92FC51A74DE2500B84F85 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BAFE97BC1A756AAF00BC8181 /* singleMode.png */,
+				BAFE97B81A7561EB00BC8181 /* backButton_.png */,
+				BAFE97B91A7561EB00BC8181 /* backButton.png */,
 				BAFE97B61A7553CD00BC8181 /* backgroundTalkbox.png */,
 				BAA9303E1A74F5BB00B84F85 /* buttonHowTo_.png */,
 				BAA9303F1A74F5BB00B84F85 /* buttonHowTo.png */,
@@ -430,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAA9300B1A74DE2500B84F85 /* sport02_.png in Resources */,
+				BAFE97BA1A7561EB00BC8181 /* backButton_.png in Resources */,
 				BA73D6001A734B54005B852D /* LaunchScreen.xib in Resources */,
 				BA4603731A74535A00A6A7EB /* button.wav in Resources */,
 				BAA930181A74DE2500B84F85 /* sport09.png in Resources */,
@@ -465,6 +478,7 @@
 				BAA9300C1A74DE2500B84F85 /* sport03.png in Resources */,
 				BAA9303B1A74F4A100B84F85 /* buttonDual.png in Resources */,
 				BAA930351A74E99D00B84F85 /* scoreBackground.png in Resources */,
+				BAFE97BF1A756FFB00BC8181 /* infoBackground.png in Resources */,
 				BAA930221A74DE2500B84F85 /* sport14.png in Resources */,
 				BAA930111A74DE2500B84F85 /* sport05_.png in Resources */,
 				BA73D5FD1A734B54005B852D /* Images.xcassets in Resources */,
@@ -474,6 +488,7 @@
 				BAA92FFD1A74DE2500B84F85 /* 1WonBackground.png in Resources */,
 				BAA9303C1A74F4A100B84F85 /* buttonSingle_.png in Resources */,
 				BA4603751A7453B000A6A7EB /* tada.wav in Resources */,
+				BAFE97BB1A7561EB00BC8181 /* backButton.png in Resources */,
 				BAA930171A74DE2500B84F85 /* sport08_.png in Resources */,
 				BAA9300E1A74DE2500B84F85 /* sport04.png in Resources */,
 				BAA930051A74DE2500B84F85 /* player1bg.png in Resources */,
@@ -484,6 +499,7 @@
 				BAA930191A74DE2500B84F85 /* sport09_.png in Resources */,
 				BAA930131A74DE2500B84F85 /* sport06_.png in Resources */,
 				BAA9300F1A74DE2500B84F85 /* sport04_.png in Resources */,
+				BAFE97BD1A756AAF00BC8181 /* singleMode.png in Resources */,
 				BAA930281A74DE2500B84F85 /* sport18.png in Resources */,
 				BAA9302B1A74DE2500B84F85 /* sport21.png in Resources */,
 				BAA9302E1A74DE2500B84F85 /* sport24.png in Resources */,

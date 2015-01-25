@@ -61,46 +61,55 @@ class GameStart: SKScene {
         background.size.width = self.size.width
         background.anchorPoint = CGPoint(x:0, y:0)
         
+        var backgroundTalkbox = SKSpriteNode(imageNamed: "backgroundTalkbox")
+        backgroundTalkbox.size.height *= ratio
+        backgroundTalkbox.size.width *= ratio
+        backgroundTalkbox.position = CGPoint(x:self.size.width*(0.35), y:self.size.height*0.55)
+        
+        addChild(background)
+        addChild(backgroundTalkbox)
+        addChild(scoreLabel)
+
+        
+        //3 action buttons
         
         var buttonSingle = SKSpriteNode(imageNamed: "buttonSingle")
         buttonSingle.size.height *= ratio
         buttonSingle.size.width *= ratio
-        println(buttonSingle.size.width)
         buttonSingle.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
-        let a:ActionButton = ActionButton(defaultButtonImage: buttonSingle, activeButtonImage: buttonSingle, buttonAction: changeScene)
+        var buttonSingle_ = SKSpriteNode(imageNamed: "buttonSingle_")
+        buttonSingle_.size.height *= ratio
+        buttonSingle_.size.width *= ratio
+        buttonSingle_.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
         
         
         var buttonDual = SKSpriteNode(imageNamed: "buttonDual")
-        buttonDual.size.height = buttonDual.size.height*ratio
-        buttonDual.size.width = buttonDual.size.width*ratio
-        println(buttonDual.size.width)
+        buttonDual.size.height *= ratio
+        buttonDual.size.width *= ratio
         buttonDual.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.15)
+        var buttonDual_ = SKSpriteNode(imageNamed: "buttonDual_")
+        buttonDual_.size.height *= ratio
+        buttonDual_.size.width *= ratio
+        buttonDual_.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.15)
 
         var buttonHowTo = SKSpriteNode(imageNamed: "buttonHowTo")
-        buttonHowTo.size.height = buttonHowTo.size.height*ratio
-        buttonHowTo.size.width = buttonHowTo.size.width*ratio
+        buttonHowTo.size.height *= ratio
+        buttonHowTo.size.width *= ratio
         buttonHowTo.position = CGPoint(x:self.size.width*(0.10), y:self.size.height*0.15)
+        var buttonHowTo_ = SKSpriteNode(imageNamed: "buttonHowTo_")
+        buttonHowTo_.size.height *= ratio
+        buttonHowTo_.size.width *= ratio
+        buttonHowTo_.position = CGPoint(x:self.size.width*(0.10), y:self.size.height*0.15)
         
-        var backgroundTalkbox = SKSpriteNode(imageNamed: "backgroundTalkbox")
-        backgroundTalkbox.size.height = backgroundTalkbox.size.height*ratio
-        backgroundTalkbox.size.width = backgroundTalkbox.size.width*ratio
-        backgroundTalkbox.position = CGPoint(x:self.size.width*(0.35), y:self.size.height*0.55)
         
         
-        //let buttonSingle:ActionButton = ActionButton(defaultButtonImage: "buttonSingle", activeButtonImage: "buttonSingle_", buttonAction: changeScene)
-        //buttonSingle.position = CGPoint(x: size.width * 0.8, y: size.height * 0.40)
-        //let buttonDual:ActionButton = ActionButton(defaultButtonImage: "buttonDual", activeButtonImage: "buttonDual_", buttonAction: changeSceneTwo)
-        //buttonDual.position = CGPoint(x: size.width * 0.8, y: size.height * 0.25)
-        
-        //let buttonHowTo:ActionButton = ActionButton(defaultButtonImage: "buttonHowTo", activeButtonImage: "buttonHowTo_", buttonAction: changeSceneThree)
-        //buttonHowTo.position = CGPoint(x: size.width * 0.8, y: size.height * 0.10)
-        
-        addChild(background)
-        addChild(buttonSingle)
-        addChild(buttonDual)
-        addChild(buttonHowTo)
-        addChild(backgroundTalkbox)
-        addChild(scoreLabel)
+        let a:ActionButton = ActionButton(defaultButtonImage: buttonSingle, activeButtonImage: buttonSingle_, buttonAction: changeScene)
+        let b:ActionButton = ActionButton(defaultButtonImage: buttonDual, activeButtonImage: buttonDual_, buttonAction: changeSceneTwo)
+        let c:ActionButton = ActionButton(defaultButtonImage: buttonHowTo, activeButtonImage: buttonHowTo_, buttonAction: changeSceneThree)
+        addChild(a)
+        addChild(b)
+        addChild(c)
+
 
     }
 

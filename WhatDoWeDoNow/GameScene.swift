@@ -20,9 +20,11 @@ class GameScene: SKScene {
     var sportsarray = Array<Sport>()
     var numOfTap: Int = 0
     var player:Int = 1
-    var player1 = SKSpriteNode(imageNamed: "player1")
-    let roundCount = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
-    
+    var singleMode = SKSpriteNode(imageNamed: "singleMode")
+    let roundCount = SKLabelNode(fontNamed: "ChalkboardSE-Light")
+    var backButton = SKSpriteNode(imageNamed: "backButton")
+    var backButton_ = SKSpriteNode(imageNamed: "backButton_")
+
     
     override init(size: CGSize) {
         super.init(size: size)
@@ -32,15 +34,25 @@ class GameScene: SKScene {
         roundCount.position = CGPoint(x: self.size.width*0, y: self.size.height*0.45)
         addChild(roundCount)
         
-        //let goBack:ActionButton = ActionButton(defaultButtonImage: "goBackToStart", activeButtonImage: "goBackToStart_", buttonAction: goBackToStart)
-        //goBack.position = CGPoint(x: size.width * 0.35, y: size.height * 0.48)
-        //addChild(goBack)
-
+        let ratio = 1/self.size.height*195
         
-        player1.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
-        addChild(player1)
+        backButton.size.height *= ratio
+        backButton.size.width *= ratio
+        backButton.position = CGPoint(x:self.size.width*(0.40), y:self.size.height*0.47)
+        backButton_.size.height *= ratio
+        backButton_.size.width *= ratio
+        backButton_.position = CGPoint(x:self.size.width*(0.40), y:self.size.height*0.47)
+        println("here is back button")
+        let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToStart)
+        addChild(goBack)
+        
+        singleMode.size.height *= ratio
+        singleMode.size.width *= ratio
+        singleMode.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.47)
+        addChild(singleMode)
+        
         anchorPoint = CGPoint(x: 0.5, y:0.45)
-        //        let background = SKSpriteNode(imageNamed: "Background")
+
         backgroundColor = SKColor.blackColor()
         addChild(gameLayer)
         let layerPosition = CGPoint(x: -TileWidth * CGFloat(NumColumns) / 2, y: -TileHeight * CGFloat(NumRows) / 2)
