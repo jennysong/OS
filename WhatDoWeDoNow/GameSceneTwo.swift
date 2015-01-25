@@ -36,8 +36,12 @@ class GameSceneTwo: SKScene {
         roundCount.position = CGPoint(x: self.size.width*0, y: self.size.height*0.45)
         addChild(roundCount)
         
+        let goBack:ActionButton = ActionButton(defaultButtonImage: "goBackToStart", activeButtonImage: "goBackToStart_", buttonAction: goBackToStart)
+        goBack.position = CGPoint(x: size.width * 0.35, y: size.height * 0.48)
+        addChild(goBack)
+        
         player1.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
-        player2.position = CGPoint(x:self.size.width*0.35, y:self.size.height*0.48)
+        player2.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
         addChild(player1)
         player1.hidden = false
         addChild(player2)
@@ -236,7 +240,13 @@ class GameSceneTwo: SKScene {
         }
 
     }
-    
+    func goBackToStart(){
+        runAction(SKAction.sequence([SKAction.runBlock() {
+            let revel = SKTransition.flipHorizontalWithDuration(0.5)
+            let scene = GameStart(size: self.size)
+            self.view?.presentScene(scene, transition: revel)
+            }]))
+    }
     
 }
 
