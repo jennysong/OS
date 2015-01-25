@@ -1,17 +1,15 @@
 //
-//  GameScene.swift
+//  GameScene2.swift
 //  WhatDoWeDoNow
 //
-//  Created by Jenny Song on 2015-01-23.
+//  Created by Younsuk Oh on 1/24/15.
 //  Copyright (c) 2015 OS. All rights reserved.
 //
 
+import Foundation
 import SpriteKit
 
-
-
-
-class GameScene: SKScene {
+class GameSceneTwo: SKScene {
     var level: Level!
     
     let gameLayer = SKNode()
@@ -43,7 +41,7 @@ class GameScene: SKScene {
         sportsLayer.position = layerPosition
         gameLayer.addChild(sportsLayer)
         
-        level = Level(lv: 1)
+        level = Level(lv: 2)
         beginGame()
     }
 

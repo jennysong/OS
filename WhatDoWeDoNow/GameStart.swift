@@ -37,7 +37,8 @@ func playBackgroundMusic(filename: String) {
 
 
 class GameStart: SKScene {
-     var level: Level!
+    var level: Level!
+    var lv = 1
     override init(size: CGSize) {
         super.init(size: size)
         //playBackgroundMusic("puyo.caf")
@@ -47,10 +48,13 @@ class GameStart: SKScene {
         background.size.width = self.size.width
         background.anchorPoint = CGPoint(x:0, y:0)
         let startButton:ActionButton = ActionButton(defaultButtonImage: "startButton1", activeButtonImage: "startButton_1", buttonAction: donothing)
-        startButton.position = CGPoint(x: size.width * 0.8, y: size.height * 0.3)
+        startButton.position = CGPoint(x: size.width * 0.8, y: size.height * 0.35)
         let levelButton:ActionButton = ActionButton(defaultButtonImage: "levelButton1", activeButtonImage: "levelButton_1", buttonAction: donothing)
+        levelButton.position = CGPoint(x: size.width * 0.8, y: size.height * 0.25)
+        
+        let howToPlayButton:ActionButton = ActionButton(defaultButtonImage: "howToPlayButton1", activeButtonImage: "howToPlayButton_1", buttonAction: chagneLevel)
         levelButton.position = CGPoint(x: size.width * 0.8, y: size.height * 0.15)
-
+        
         addChild(background)
         addChild(startButton)
         addChild(levelButton)
@@ -65,9 +69,18 @@ class GameStart: SKScene {
     func donothing(){
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
-            let scene = GameScene(size: self.size)
-            self.view?.presentScene(scene, transition: revel)
+            if self.lv == 1 {
+                let scene = GameScene(size: self.size)
+                self.view?.presentScene(scene, transition: revel)
+            } else if self.lv == 2 {
+                let scene = GameSceneTwo(size: self.size)
+                self.view?.presentScene(scene, transition: revel)
+            }
+            
             }]))
+    }
+    func chagneLevel(){
+        lv = (lv + 1) % 2 + 1
     }
     
 }

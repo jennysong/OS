@@ -12,6 +12,10 @@ let NumColumns = 5
 let NumRows = 3
 
 class Level {
+    let lv = 1
+    init (lv: Int){
+        self.lv = lv
+    }
     private var sports = Array2D<Sport>(columns: NumColumns, rows: NumRows)
     
     func sportAtColumn(column: Int, row: Int) -> Sport? {
