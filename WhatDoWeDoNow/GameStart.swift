@@ -39,8 +39,17 @@ func playBackgroundMusic(filename: String) {
 class GameStart: SKScene {
     //var level: Level!
     //var lv = 1
+    var scoreManger = ScoreManger()
     override init(size: CGSize) {
         super.init(size: size)
+        var score = scoreManger.max()
+        let scoreLabel = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
+        
+        scoreLabel.text = "Highest Score: "+String(score)
+        scoreLabel.fontSize = 20
+        scoreLabel.fontColor = SKColor.blueColor()
+        scoreLabel.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.9)
+        
         //playBackgroundMusic("puyo.caf")
         //runAction(SKAction.playSoundFileNamed("start.mp3", waitForCompletion: false))
         var background = SKSpriteNode(imageNamed: "background")
@@ -58,7 +67,7 @@ class GameStart: SKScene {
         addChild(background)
         addChild(startButton)
         addChild(levelButton)
-        
+        addChild(scoreLabel)
         
 
     }
