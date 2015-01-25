@@ -71,6 +71,9 @@
 		BA73D6981A735A40005B852D /* sport23.png in Resources */ = {isa = PBXBuildFile; fileRef = BA73D6701A735A40005B852D /* sport23.png */; };
 		BA73D6991A735A40005B852D /* sport24.png in Resources */ = {isa = PBXBuildFile; fileRef = BA73D6711A735A40005B852D /* sport24.png */; };
 		BA73D69A1A735A40005B852D /* sport25.png in Resources */ = {isa = PBXBuildFile; fileRef = BA73D6721A735A40005B852D /* sport25.png */; };
+		BAA92FBE1A746A9C00B84F85 /* blackBG.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA92FBD1A746A9C00B84F85 /* blackBG.png */; };
+		BAA92FC11A746D7A00B84F85 /* player1bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA92FBF1A746D7A00B84F85 /* player1bg.png */; };
+		BAA92FC21A746D7A00B84F85 /* player2bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA92FC01A746D7A00B84F85 /* player2bg.png */; };
 		F3B988681A73CC720054A4F1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B988671A73CC720054A4F1 /* Result.swift */; };
 		F3B9886A1A73E4290054A4F1 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B988691A73E4290054A4F1 /* Sport.swift */; };
 		F3B9886C1A73F95F0054A4F1 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B9886B1A73F95F0054A4F1 /* Array2D.swift */; };
@@ -160,6 +163,9 @@
 		BA73D6701A735A40005B852D /* sport23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sport23.png; sourceTree = "<group>"; };
 		BA73D6711A735A40005B852D /* sport24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sport24.png; sourceTree = "<group>"; };
 		BA73D6721A735A40005B852D /* sport25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sport25.png; sourceTree = "<group>"; };
+		BAA92FBD1A746A9C00B84F85 /* blackBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackBG.png; sourceTree = "<group>"; };
+		BAA92FBF1A746D7A00B84F85 /* player1bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player1bg.png; sourceTree = "<group>"; };
+		BAA92FC01A746D7A00B84F85 /* player2bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player2bg.png; sourceTree = "<group>"; };
 		F3B988671A73CC720054A4F1 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		F3B988691A73E4290054A4F1 /* Sport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		F3B9886B1A73F95F0054A4F1 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
@@ -269,6 +275,9 @@
 		BA73D64A1A735A40005B852D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BAA92FBF1A746D7A00B84F85 /* player1bg.png */,
+				BAA92FC01A746D7A00B84F85 /* player2bg.png */,
+				BAA92FBD1A746A9C00B84F85 /* blackBG.png */,
 				BA4603621A7440E900A6A7EB /* player1.png */,
 				BA4603631A7440E900A6A7EB /* player2.png */,
 				BA4FF47A1A743AEA0070E94E /* 1WonBackground.png */,
@@ -412,6 +421,7 @@
 				BA73D6851A735A40005B852D /* sport10.png in Resources */,
 				BA4FF46D1A7415040070E94E /* background.png in Resources */,
 				BA73D6771A735A40005B852D /* sport03.png in Resources */,
+				BAA92FC11A746D7A00B84F85 /* player1bg.png in Resources */,
 				BA73D68C1A735A40005B852D /* sport13_.png in Resources */,
 				BA73D6981A735A40005B852D /* sport23.png in Resources */,
 				BA73D67D1A735A40005B852D /* sport06.png in Resources */,
@@ -430,6 +440,7 @@
 				BA73D6941A735A40005B852D /* sport19.png in Resources */,
 				BA73D6831A735A40005B852D /* sport09.png in Resources */,
 				BA73D68E1A735A40005B852D /* sport14_.png in Resources */,
+				BAA92FBE1A746A9C00B84F85 /* blackBG.png in Resources */,
 				BA4FF47E1A743AEA0070E94E /* 2WonBackground.png in Resources */,
 				BA4FF47F1A743AEA0070E94E /* bothWonBackground.png in Resources */,
 				BA73D6891A735A40005B852D /* sport12.png in Resources */,
@@ -458,6 +469,7 @@
 				BA73D6811A735A40005B852D /* sport08.png in Resources */,
 				BA73D6761A735A40005B852D /* sport02_.png in Resources */,
 				BA73D6961A735A40005B852D /* sport21.png in Resources */,
+				BAA92FC21A746D7A00B84F85 /* player2bg.png in Resources */,
 				BA73D6951A735A40005B852D /* sport20.png in Resources */,
 				BA73D68F1A735A40005B852D /* sport15.png in Resources */,
 				BA73D6801A735A40005B852D /* sport07_.png in Resources */,
