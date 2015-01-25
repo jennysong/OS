@@ -36,9 +36,9 @@ class GameSceneTwo: SKScene {
         roundCount.position = CGPoint(x: self.size.width*0, y: self.size.height*0.45)
         addChild(roundCount)
         
-        let goBack:ActionButton = ActionButton(defaultButtonImage: "goBackToStart", activeButtonImage: "goBackToStart_", buttonAction: goBackToStart)
-        goBack.position = CGPoint(x: size.width * 0.35, y: size.height * 0.48)
-        addChild(goBack)
+        //let goBack:ActionButton = ActionButton(defaultButtonImage: "goBackToStart", activeButtonImage: "goBackToStart_", buttonAction: goBackToStart)
+        //goBack.position = CGPoint(x: size.width * 0.35, y: size.height * 0.48)
+        //addChild(goBack)
         
         player1.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
         player2.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)

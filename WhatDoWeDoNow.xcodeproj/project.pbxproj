@@ -75,6 +75,7 @@
 		BAA9303D1A74F4A100B84F85 /* buttonSingle.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA930391A74F4A100B84F85 /* buttonSingle.png */; };
 		BAA930401A74F5BB00B84F85 /* buttonHowTo_.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA9303E1A74F5BB00B84F85 /* buttonHowTo_.png */; };
 		BAA930411A74F5BB00B84F85 /* buttonHowTo.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA9303F1A74F5BB00B84F85 /* buttonHowTo.png */; };
+		BAFE97B71A7553CD00BC8181 /* backgroundTalkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFE97B61A7553CD00BC8181 /* backgroundTalkbox.png */; };
 		F3B873721A74FC9E009B3ACD /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B873711A74FC9E009B3ACD /* Score.swift */; };
 		F3B873741A74FCF3009B3ACD /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B873731A74FCF3009B3ACD /* ScoreManager.swift */; };
 		F3B988681A73CC720054A4F1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B988671A73CC720054A4F1 /* Result.swift */; };
@@ -171,6 +172,7 @@
 		BAA930391A74F4A100B84F85 /* buttonSingle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonSingle.png; sourceTree = "<group>"; };
 		BAA9303E1A74F5BB00B84F85 /* buttonHowTo_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonHowTo_.png; sourceTree = "<group>"; };
 		BAA9303F1A74F5BB00B84F85 /* buttonHowTo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonHowTo.png; sourceTree = "<group>"; };
+		BAFE97B61A7553CD00BC8181 /* backgroundTalkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTalkbox.png; sourceTree = "<group>"; };
 		F3B873711A74FC9E009B3ACD /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Score.swift; path = images/Score.swift; sourceTree = "<group>"; };
 		F3B873731A74FCF3009B3ACD /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		F3B988671A73CC720054A4F1 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 		BAA92FC51A74DE2500B84F85 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BAFE97B61A7553CD00BC8181 /* backgroundTalkbox.png */,
 				BAA9303E1A74F5BB00B84F85 /* buttonHowTo_.png */,
 				BAA9303F1A74F5BB00B84F85 /* buttonHowTo.png */,
 				BAA930361A74F4A100B84F85 /* buttonDual_.png */,
@@ -487,6 +490,7 @@
 				BAA930001A74DE2500B84F85 /* blackBG.png in Resources */,
 				BAA9302D1A74DE2500B84F85 /* sport23.png in Resources */,
 				BAA930291A74DE2500B84F85 /* sport19.png in Resources */,
+				BAFE97B71A7553CD00BC8181 /* backgroundTalkbox.png in Resources */,
 				BAA9301E1A74DE2500B84F85 /* sport12.png in Resources */,
 				BAA9302F1A74DE2500B84F85 /* sport25.png in Resources */,
 			);

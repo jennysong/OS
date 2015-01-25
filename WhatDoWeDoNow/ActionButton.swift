@@ -14,10 +14,10 @@ class ActionButton: SKNode {
     var activeButton: SKSpriteNode
     var action: () -> Void
     
-    init(defaultButtonImage: String, activeButtonImage: String, buttonAction: () -> Void) {
+    init(defaultButtonImage: SKSpriteNode, activeButtonImage: SKSpriteNode, buttonAction: () -> Void) {
         
-        defaultButton = SKSpriteNode(imageNamed: defaultButtonImage)
-        activeButton  = SKSpriteNode(imageNamed: activeButtonImage)
+        defaultButton = defaultButtonImage
+        activeButton  = activeButtonImage
         activeButton.hidden = true
         action = buttonAction
         super.init()
@@ -29,6 +29,8 @@ class ActionButton: SKNode {
         addChild(activeButton)
         
     }
+    
+    
 
     
     required init?(coder aDecoder: NSCoder) {

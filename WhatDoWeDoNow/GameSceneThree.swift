@@ -14,9 +14,9 @@ class GameSceneThree: SKScene {
     override init(size: CGSize) {
         super.init(size: size)
         
-        let goBack:ActionButton = ActionButton(defaultButtonImage: "goBackToStart", activeButtonImage: "goBackToStart_", buttonAction: goBackToStart)
-        goBack.position = CGPoint(x: size.width * 0.35, y: size.height * 0.48)
-        addChild(goBack)
+        //let goBack:ActionButton = ActionButton(defaultButtonImage: "goBackToStart", activeButtonImage: "goBackToStart_", buttonAction: goBackToStart)
+        //goBack.position = CGPoint(x: size.width * 0.35, y: size.height * 0.48)
+        //addChild(goBack)
 
         anchorPoint = CGPoint(x: 0.5, y:0.45)
         backgroundColor = SKColor.blackColor()
