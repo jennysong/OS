@@ -47,17 +47,18 @@ class GameStart: SKScene {
         background.size.height = self.size.height
         background.size.width = self.size.width
         background.anchorPoint = CGPoint(x:0, y:0)
-        let startButton:ActionButton = ActionButton(defaultButtonImage: "startButton1", activeButtonImage: "startButton_1", buttonAction: changeScene)
-        startButton.position = CGPoint(x: size.width * 0.8, y: size.height * 0.35)
-        let levelButton:ActionButton = ActionButton(defaultButtonImage: "levelButton1", activeButtonImage: "levelButton_1", buttonAction: changeSceneTwo)
-        levelButton.position = CGPoint(x: size.width * 0.8, y: size.height * 0.25)
+        let buttonSingle:ActionButton = ActionButton(defaultButtonImage: "buttonSingle", activeButtonImage: "buttonSingle_", buttonAction: changeScene)
+        buttonSingle.position = CGPoint(x: size.width * 0.8, y: size.height * 0.40)
+        let buttonDual:ActionButton = ActionButton(defaultButtonImage: "buttonDual", activeButtonImage: "buttonDual_", buttonAction: changeSceneTwo)
+        buttonDual.position = CGPoint(x: size.width * 0.8, y: size.height * 0.25)
         
-        let howToPlayButton:ActionButton = ActionButton(defaultButtonImage: "howToPlayButton1", activeButtonImage: "howToPlayButton_1", buttonAction: changeSceneThree)
-        levelButton.position = CGPoint(x: size.width * 0.8, y: size.height * 0.15)
+        let buttonHowTo:ActionButton = ActionButton(defaultButtonImage: "buttonHowTo", activeButtonImage: "buttonHowTo_", buttonAction: changeSceneThree)
+        buttonHowTo.position = CGPoint(x: size.width * 0.8, y: size.height * 0.10)
         
         addChild(background)
-        addChild(startButton)
-        addChild(levelButton)
+        addChild(buttonSingle)
+        addChild(buttonDual)
+        addChild(buttonHowTo)
         
         
 
