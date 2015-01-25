@@ -11,7 +11,6 @@
 		BA4603701A7450E000A6A7EB /* change.wav in Resources */ = {isa = PBXBuildFile; fileRef = BA46036F1A7450E000A6A7EB /* change.wav */; };
 		BA4603731A74535A00A6A7EB /* button.wav in Resources */ = {isa = PBXBuildFile; fileRef = BA4603721A74535A00A6A7EB /* button.wav */; };
 		BA4603751A7453B000A6A7EB /* tada.wav in Resources */ = {isa = PBXBuildFile; fileRef = BA4603741A7453B000A6A7EB /* tada.wav */; };
-		BA4603771A7453F900A6A7EB /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA4603761A7453F900A6A7EB /* start.mp3 */; };
 		BA73D5F21A734B54005B852D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73D5F11A734B54005B852D /* AppDelegate.swift */; };
 		BA73D5F61A734B54005B852D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73D5F51A734B54005B852D /* GameScene.swift */; };
 		BA73D5F81A734B54005B852D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73D5F71A734B54005B852D /* GameViewController.swift */; };
@@ -104,7 +103,6 @@
 		BA4603711A7451D400A6A7EB /* puyo.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = puyo.caf; sourceTree = "<group>"; };
 		BA4603721A74535A00A6A7EB /* button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button.wav; sourceTree = "<group>"; };
 		BA4603741A7453B000A6A7EB /* tada.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tada.wav; sourceTree = "<group>"; };
-		BA4603761A7453F900A6A7EB /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 		BA73D5EC1A734B54005B852D /* WhatDoWeDoNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatDoWeDoNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA73D5F01A734B54005B852D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA73D5F11A734B54005B852D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 			children = (
 				BA4603741A7453B000A6A7EB /* tada.wav */,
 				BA4603721A74535A00A6A7EB /* button.wav */,
-				BA4603761A7453F900A6A7EB /* start.mp3 */,
 				BA4603711A7451D400A6A7EB /* puyo.caf */,
 				BA46036F1A7450E000A6A7EB /* change.wav */,
 				BA46036D1A74503C00A6A7EB /* button.wav */,
@@ -468,7 +465,6 @@
 				BAA930221A74DE2500B84F85 /* sport14.png in Resources */,
 				BAA930111A74DE2500B84F85 /* sport05_.png in Resources */,
 				BA73D5FD1A734B54005B852D /* Images.xcassets in Resources */,
-				BA4603771A7453F900A6A7EB /* start.mp3 in Resources */,
 				BAA9302A1A74DE2500B84F85 /* sport20.png in Resources */,
 				BA73D5FB1A734B54005B852D /* Main.storyboard in Resources */,
 				BAA9301B1A74DE2500B84F85 /* sport10_.png in Resources */,

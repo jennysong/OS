@@ -45,6 +45,8 @@ class GameStart: SKScene {
         var score = scoreManager.max()
         let scoreLabel = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
         
+        runAction(SKAction.repeatActionForever(SKAction.playSoundFileNamed("start.mp3", waitForCompletion: true)))
+        
         scoreLabel.text = "Highest Score: "+String(score)
         scoreLabel.fontSize = 20
         scoreLabel.fontColor = SKColor.blueColor()
@@ -69,8 +71,6 @@ class GameStart: SKScene {
         addChild(buttonDual)
         addChild(buttonHowTo)
         addChild(scoreLabel)
-        
-
     }
 
     required init?(coder aDecoder: NSCoder) {
