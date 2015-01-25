@@ -27,6 +27,7 @@ class GameSceneTwo: SKScene {
     let roundCount = SKLabelNode(fontNamed: "ChalkboardSE-Light")
     var backButton = SKSpriteNode(imageNamed: "backButton")
     var backButton_ = SKSpriteNode(imageNamed: "backButton_")
+    var touchable = true
     
     override init(size: CGSize) {
         super.init(size: size)
@@ -110,29 +111,32 @@ class GameSceneTwo: SKScene {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        if touchable {
         let touch = touches.anyObject() as UITouch
         let location = touch.locationInNode(sportsLayer)
         
         let (success, column, row) = touchPoint(location)
-        if success {
-            runAction(SKAction.playSoundFileNamed("button.wav", waitForCompletion: false))
-            if let sport = level.sportAtColumn(column,  row: row){
-            showSelectionIndicatorForSport(sport)
-                
-                if (checkCorrect(sport)){
-                    if(sportsarray.count == numOfTap){
-                        sportsarray.append(sport)
-                        roundCount.text = "Round: "+String(sportsarray.count)
-                        numOfTap == 0
-                        nextTurn()
-                        return
+            if success {
+                runAction(SKAction.playSoundFileNamed("button.wav", waitForCompletion: false))
+                if let sport = level.sportAtColumn(column,  row: row){
+                    showSelectionIndicatorForSport(sport)
+                    
+                    if (checkCorrect(sport)){
+                        if(sportsarray.count == numOfTap){
+                            sportsarray.append(sport)
+                            roundCount.text = "Round: "+String(sportsarray.count)
+                            numOfTap = 0
+                            touchable = false
+                            nextTurn()
+                            return
+                        }
+                        numOfTap++
+                        if( numOfTap == 15 ) {
+                            bothWin()
+                        }
+                    } else {
+                        whoWon()
                     }
-                    numOfTap++
-                    if( numOfTap == 15 ) {
-                        bothWin()
-                    }
-                } else {
-                    whoWon()
                 }
             }
         }
@@ -201,8 +205,10 @@ class GameSceneTwo: SKScene {
         println("next turn!: player \(player)")
         
         if selectionSprite.parent != nil {
-            selectionSprite.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))        }
+            selectionSprite.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))
+        }
         showPlayer()
+        
         numOfTap = 0
         
     }
@@ -241,14 +247,18 @@ class GameSceneTwo: SKScene {
         if (player == 1){
             addChild(player1bg)
             player1bg.zPosition = 1000
-            player1bg.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))
+            player1bg.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.runBlock(){
+                self.touchable = true
+                },SKAction.removeFromParent()]))
             player2.hidden = true
             player1.hidden = false
         }
         else {
             addChild(player2bg)
             player2bg.zPosition = 1000
-            player2bg.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))
+            player2bg.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.runBlock(){
+                self.touchable = true
+                },SKAction.removeFromParent()]))
             player1.hidden = true
             player2.hidden = false
             

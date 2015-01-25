@@ -24,7 +24,7 @@ class GameScene: SKScene {
     let roundCount = SKLabelNode(fontNamed: "ChalkboardSE-Light")
     var backButton = SKSpriteNode(imageNamed: "backButton")
     var backButton_ = SKSpriteNode(imageNamed: "backButton_")
-
+    var touchable = true
     
     override init(size: CGSize) {
         super.init(size: size)
@@ -52,7 +52,7 @@ class GameScene: SKScene {
         addChild(singleMode)
         
         anchorPoint = CGPoint(x: 0.5, y:0.45)
-
+        
         backgroundColor = SKColor.blackColor()
         addChild(gameLayer)
         let layerPosition = CGPoint(x: -TileWidth * CGFloat(NumColumns) / 2, y: -TileHeight * CGFloat(NumRows) / 2)
@@ -91,28 +91,31 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        let touch = touches.anyObject() as UITouch
-        let location = touch.locationInNode(sportsLayer)
-        
-        let (success, column, row) = touchPoint(location)
-        if success {
-            runAction(SKAction.playSoundFileNamed("button.wav", waitForCompletion: false))
-            if let sport = level.sportAtColumn(column,  row: row){
-                highlight(sport)
-                
-                if (checkCorrect(sport)){
-                    if(sportsarray.count == numOfTap){
-                        sportsarray.append(sport)
-                        roundCount.text = "Score: "+String(sportsarray.count)+"0"
-                        numOfTap == 0
-                        println("doesn't come here")
-                        nextTurn()
-                        
-                        return
+        if touchable {
+            let touch = touches.anyObject() as UITouch
+            let location = touch.locationInNode(sportsLayer)
+            
+            let (success, column, row) = touchPoint(location)
+            if success {
+                runAction(SKAction.playSoundFileNamed("button.wav", waitForCompletion: false))
+                if let sport = level.sportAtColumn(column,  row: row){
+                    highlight(sport)
+                    
+                    if (checkCorrect(sport)){
+                        if(sportsarray.count == numOfTap){
+                            sportsarray.append(sport)
+                            roundCount.text = "Score: "+String(sportsarray.count)+"0"
+                            numOfTap = 0
+                            touchable = false
+                            println("doesn't come here")
+                            nextTurn()
+                            
+                            return
+                        }
+                        numOfTap++
+                    } else {
+                        endScore()
                     }
-                    numOfTap++
-                } else {
-                    endScore()
                 }
             }
         }
@@ -139,7 +142,7 @@ class GameScene: SKScene {
             sprite.addChild(selectionSprite)
             selectionSprite.alpha = 1.0
         }
-
+        
     }
     
     
@@ -175,6 +178,7 @@ class GameScene: SKScene {
             botPlay()
         }
         else { player = 1
+            //self.touchable = true
             println("next turn!: player 1")}
         
         if selectionSprite.parent != nil {
@@ -233,21 +237,24 @@ class GameScene: SKScene {
             
             var sport: Sport = sportsarray[i]
             if let sprite = sport.sprite {
-
-
+                
+                
                 runAction(SKAction.sequence([SKAction.waitForDuration(1*NSTimeInterval(i)),SKAction.playSoundFileNamed("change.wav", waitForCompletion: false), SKAction.runBlock{
-                        let texture = SKTexture(imageNamed: sport.sportType.highlightedSpriteName)
-                        skS = SKSpriteNode(texture: texture)
-                        skS.size = texture.size()
-                        skS.runAction(SKAction.setTexture(texture))
-                        sprite.addChild(skS)
-                        skS.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))
+                    let texture = SKTexture(imageNamed: sport.sportType.highlightedSpriteName)
+                    skS = SKSpriteNode(texture: texture)
+                    skS.size = texture.size()
+                    skS.runAction(SKAction.setTexture(texture))
+                    sprite.addChild(skS)
+                    skS.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))
+                    if ( i == self.sportsarray.count - 1){
+                        self.touchable = true
+                    }
                     }]))
-
+                
             }
             
         }
-
+        
         nextTurn()
     }
     
