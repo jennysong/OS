@@ -68,7 +68,7 @@ class GameScene: SKScene {
         player1bg.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))
         player2bg.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))*/
         
-        level = Level(lv: 1)
+        level = Level(level:1)
         beginGame()
     }
 

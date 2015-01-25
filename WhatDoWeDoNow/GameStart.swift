@@ -47,9 +47,9 @@ class GameStart: SKScene {
         background.size.height = self.size.height
         background.size.width = self.size.width
         background.anchorPoint = CGPoint(x:0, y:0)
-        let startButton:ActionButton = ActionButton(defaultButtonImage: "startButton1", activeButtonImage: "startButton_1", buttonAction: donothing)
+        let startButton:ActionButton = ActionButton(defaultButtonImage: "startButton1", activeButtonImage: "startButton_1", buttonAction: changeScene)
         startButton.position = CGPoint(x: size.width * 0.8, y: size.height * 0.35)
-        let levelButton:ActionButton = ActionButton(defaultButtonImage: "levelButton1", activeButtonImage: "levelButton_1", buttonAction: donothing)
+        let levelButton:ActionButton = ActionButton(defaultButtonImage: "levelButton1", activeButtonImage: "levelButton_1", buttonAction: changeScene)
         levelButton.position = CGPoint(x: size.width * 0.8, y: size.height * 0.25)
         
         let howToPlayButton:ActionButton = ActionButton(defaultButtonImage: "howToPlayButton1", activeButtonImage: "howToPlayButton_1", buttonAction: chagneLevel)
@@ -66,13 +66,13 @@ class GameStart: SKScene {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func donothing(){
+    func changeScene(){
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
-            if self.lv == 1 {
+            if self.lv == 1 {                                   //1: easy mode
                 let scene = GameScene(size: self.size)
                 self.view?.presentScene(scene, transition: revel)
-            } else if self.lv == 2 {
+            } else if self.lv == 2 {                            //2: moderate mode
                 let scene = GameSceneTwo(size: self.size)
                 self.view?.presentScene(scene, transition: revel)
             }
