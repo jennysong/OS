@@ -8,8 +8,8 @@
 
 import Foundation
 
-class HighScoreManager {
-    var scores:Array<HighScore> = [];
+class ScoreManger {
+    var scores:Array<Score> = [];
     
     init() {
         // load existing high scores or set up an empty array
@@ -30,7 +30,7 @@ class HighScoreManager {
             // do we get serialized data back from the attempted path?
             // if so, unarchive it into an AnyObject, and then convert to an array of HighScores, if possible
             var scoreArray: AnyObject? = NSKeyedUnarchiver.unarchiveObjectWithData(rawData);
-            self.scores = scoreArray as? [HighScore] ?? [];
+            self.scores = scoreArray as? [Score] ?? [];
         }
     }
     
@@ -47,9 +47,19 @@ class HighScoreManager {
     // a simple function to add a new high score, to be called from your game logic
     // note that this doesn't sort or filter the scores in any way
     func addNewScore(newScore:Int) {
-        let newHighScore = HighScore(score: newScore, dateOfScore: NSDate());
+        let newHighScore = Score(score: newScore, dateOfScore: NSDate());
         self.scores.append(newHighScore);
         self.save();
+    }
+    
+    func max() -> Int {
+        var max = 0
+        for i in scores {
+            if (i.score > max) {
+                max = i.score
+            }
+        }
+        return max
     }
     
     

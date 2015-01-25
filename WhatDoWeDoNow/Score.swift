@@ -8,7 +8,7 @@
 
 import Foundation
 
-class HighScore: NSObject, NSCoding {
+class Score: NSObject, NSCoding {
     let score:Int
     let dateOfScore: NSDate
     
