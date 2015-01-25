@@ -28,6 +28,13 @@ class GameScene: SKScene {
     
     override init(size: CGSize) {
         super.init(size: size)
+        
+        var gameBG = SKSpriteNode(imageNamed: "gameBG")
+        gameBG.size.height = self.size.height
+        gameBG.size.width = self.size.width
+        gameBG.position = CGPoint(x:self.size.width*0, y: self.size.height*0.05)
+        addChild(gameBG)
+        
         roundCount.text = "Score: "+String(sportsarray.count)
         roundCount.fontSize = 20
         roundCount.fontColor = SKColor.whiteColor()
@@ -53,7 +60,7 @@ class GameScene: SKScene {
         
         anchorPoint = CGPoint(x: 0.5, y:0.45)
         
-        backgroundColor = SKColor.blackColor()
+        
         addChild(gameLayer)
         let layerPosition = CGPoint(x: -TileWidth * CGFloat(NumColumns) / 2, y: -TileHeight * CGFloat(NumRows) / 2)
         sportsLayer.position = layerPosition
@@ -198,7 +205,7 @@ class GameScene: SKScene {
     }
     
     func endScore(){
-        switchSceneToResults("score", score: sportsarray.count*10)
+        switchSceneToResults("score", score: sportsarray.count*10-10)
         reset()
     }
     

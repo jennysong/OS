@@ -41,12 +41,19 @@ class Result: SKScene {
         background.anchorPoint = CGPoint(x:0, y:0)
         addChild(background)
         
-        var scoreText = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
+        var yourScore = SKLabelNode(fontNamed: "ChalkboardSE-Light")
+        yourScore.text = "Your Score"
+        yourScore.fontSize = 60
+        yourScore.fontColor = SKColor.blackColor()
+        yourScore.position = CGPoint(x: self.size.width*0.5, y: self.size.height*0.65)
+        addChild(yourScore)
+        
+        var scoreText = SKLabelNode(fontNamed: "ChalkboardSE-Light")
         scoreText.text = String(score)
         println("scoreText")
-        scoreText.fontSize = 20
-        scoreText.fontColor = SKColor.whiteColor()
-        scoreText.position = CGPoint(x: self.size.width*0.5, y: self.size.height*0.5)
+        scoreText.fontSize = 100
+        scoreText.fontColor = SKColor.blackColor()
+        scoreText.position = CGPoint(x: self.size.width*0.5, y: self.size.height*0.35)
         addChild(scoreText)
         
         runAction(SKAction.playSoundFileNamed("tada.wav", waitForCompletion: false))

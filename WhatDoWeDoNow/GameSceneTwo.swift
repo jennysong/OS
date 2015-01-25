@@ -31,6 +31,12 @@ class GameSceneTwo: SKScene {
     
     override init(size: CGSize) {
         super.init(size: size)
+
+        var gameBG = SKSpriteNode(imageNamed: "gameBG")
+        gameBG.size.height = self.size.height
+        gameBG.size.width = self.size.width
+        gameBG.position = CGPoint(x:self.size.width*0, y: self.size.height*0.05)
+        addChild(gameBG)
         
         roundCount.text = "Round: "+String(sportsarray.count)
         roundCount.fontSize = 20
@@ -131,7 +137,7 @@ class GameSceneTwo: SKScene {
                             return
                         }
                         numOfTap++
-                        if( numOfTap == 15 ) {
+                        if( numOfTap == 20 ) {
                             bothWin()
                         }
                     } else {
