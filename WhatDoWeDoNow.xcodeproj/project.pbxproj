@@ -287,6 +287,7 @@
 		BAA92FC51A74DE2500B84F85 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BAA930341A74E99D00B84F85 /* scoreBackground.png */,
 				BAA92FC61A74DE2500B84F85 /* 1WonBackground.png */,
 				BAA92FC71A74DE2500B84F85 /* 2WonBackground.png */,
 				BAA92FC81A74DE2500B84F85 /* background.png */,
@@ -460,6 +461,7 @@
 				BA4603701A7450E000A6A7EB /* change.wav in Resources */,
 				BAA930141A74DE2500B84F85 /* sport07.png in Resources */,
 				BAA9300C1A74DE2500B84F85 /* sport03.png in Resources */,
+				BAA930351A74E99D00B84F85 /* scoreBackground.png in Resources */,
 				BAA930221A74DE2500B84F85 /* sport14.png in Resources */,
 				BAA930331A74DE2500B84F85 /* startButton_1.png in Resources */,
 				BAA930111A74DE2500B84F85 /* sport05_.png in Resources */,
