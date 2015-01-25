@@ -80,7 +80,7 @@ class GameScene: SKScene {
         if success {
             runAction(SKAction.playSoundFileNamed("button.wav", waitForCompletion: false))
             if let sport = level.sportAtColumn(column,  row: row){
-                showSelectionIndicatorForSport(sport)
+                highlight(sport)
                 
                 if (checkCorrect(sport)){
                     if(sportsarray.count == numOfTap){
@@ -110,7 +110,7 @@ class GameScene: SKScene {
         }
     }
     
-    func showSelectionIndicatorForSport(sport: Sport) {
+    func highlight(sport: Sport) {
         if selectionSprite.parent != nil {
             selectionSprite.removeFromParent()
         }
@@ -123,9 +123,10 @@ class GameScene: SKScene {
             sprite.addChild(selectionSprite)
             selectionSprite.alpha = 1.0
         }
+        hideSelectionIndicator()
     }
     
-    func hidSelectionIndicator() {
+    func hideSelectionIndicator() {
         selectionSprite.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))
     }
     
@@ -159,7 +160,7 @@ class GameScene: SKScene {
     }
     
     func nextTurn(){
-        runAction(SKAction.playSoundFileNamed("change.wav", waitForCompletion: false))
+        runAction(SKAction.playSoundFileNamed("change.wav", waitForCompletion: true))
         if (player == 1) {
             player = 2
             botPlay()
@@ -217,15 +218,34 @@ class GameScene: SKScene {
     
     func botPlay() {
         showPlayer()
+        var skS = SKSpriteNode()
         println("bot is playing")
-        for i in 0 ... (sportsarray.count - 1) {
-            println(sportsarray[i]) //later change this to highlight.
-        }
+        
         var randomColumn = Int(arc4random_uniform(5))
         var randomRow = Int(arc4random_uniform(3))
         var randomSport = level.sportAtColumn(randomColumn, row: randomRow)
         sportsarray.append(randomSport!)
         println("added\(randomSport!)")
+        for i in 0 ... (sportsarray.count - 1) {
+            println("what happens here?")
+            
+            var sport: Sport = sportsarray[i]
+            if let sprite = sport.sprite {
+
+
+                runAction(SKAction.sequence([SKAction.waitForDuration(1*NSTimeInterval(i)),SKAction.playSoundFileNamed("change.wav", waitForCompletion: false), SKAction.runBlock{
+                        let texture = SKTexture(imageNamed: sport.sportType.highlightedSpriteName)
+                        skS = SKSpriteNode(texture: texture)
+                        skS.size = texture.size()
+                        skS.runAction(SKAction.setTexture(texture))
+                        sprite.addChild(skS)
+                        skS.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))
+                    }]))
+
+            }
+            
+        }
+
         nextTurn()
     }
     
