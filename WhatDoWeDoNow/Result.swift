@@ -11,7 +11,7 @@ import SpriteKit
 import UIKit
 
 class Result: SKScene {
-    var scoreManger = ScoreManger()
+    var scoreManager = ScoreManager()
     
     
     init(size: CGSize, string: String) {
@@ -32,8 +32,8 @@ class Result: SKScene {
     
     init(size: CGSize, string: String, score: Int) {
         super.init(size: size)
-        scoreManger.addNewScore(score)
-        scoreManger.save()
+        scoreManager.addNewScore(score)
+        scoreManager.save()
         
         var background = SKSpriteNode(imageNamed: string + "Background")
         background.size.height = self.size.height

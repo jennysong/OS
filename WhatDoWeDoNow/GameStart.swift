@@ -39,10 +39,10 @@ func playBackgroundMusic(filename: String) {
 class GameStart: SKScene {
     //var level: Level!
     //var lv = 1
-    var scoreManger = ScoreManger()
+    var scoreManager = ScoreManager()
     override init(size: CGSize) {
         super.init(size: size)
-        var score = scoreManger.max()
+        var score = scoreManager.max()
         let scoreLabel = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
         
         scoreLabel.text = "Highest Score: "+String(score)
@@ -68,7 +68,7 @@ class GameStart: SKScene {
         addChild(buttonSingle)
         addChild(buttonDual)
         addChild(buttonHowTo)
-        
+        addChild(scoreLabel)
         
 
     }
