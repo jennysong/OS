@@ -52,7 +52,7 @@ class GameStart: SKScene {
         scoreLabel.fontColor = SKColor.whiteColor()
         scoreLabel.position = CGPoint(x:self.size.width*(0.85), y:self.size.height*0.9)
         
-        //playBackgroundMusic("puyo.caf")
+        playBackgroundMusic("quizSound.mp3")
         //runAction(SKAction.playSoundFileNamed("start.mp3", waitForCompletion: false))
         let ratio = 1/self.size.height*195
         
