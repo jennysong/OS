@@ -55,8 +55,6 @@ class GameScene: SKScene {
         player2bg.size.height = self.size.height
         player2bg.size.width = self.size.width
         player2bg.position = CGPoint(x:0, y:self.size.height*0.05)
-        
-//        let background = SKSpriteNode(imageNamed: "Background")
         backgroundColor = SKColor.blackColor()
         addChild(gameLayer)
         let layerPosition = CGPoint(x: -TileWidth * CGFloat(NumColumns) / 2, y: -TileHeight * CGFloat(NumRows) / 2)
@@ -70,6 +68,7 @@ class GameScene: SKScene {
         
         level = Level(level:1)
         beginGame()
+        
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -189,9 +188,10 @@ class GameScene: SKScene {
         if (player == 1) { player = 2}
         else { player = 1}
         println("next turn!: player \(player)")
-        showPlayer()
+        
         if selectionSprite.parent != nil {
             selectionSprite.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))        }
+        showPlayer()
         numOfTap = 0
         
     }
@@ -229,12 +229,14 @@ class GameScene: SKScene {
         println("next turn!: player \(player)")
         if (player == 1){
             addChild(player1bg)
+            player1bg.zPosition = 1000
             player1bg.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))
             player2.hidden = true
             player1.hidden = false
         }
         else {
             addChild(player2bg)
+            player2bg.zPosition = 1000
             player2bg.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))
             player1.hidden = true
             player2.hidden = false
