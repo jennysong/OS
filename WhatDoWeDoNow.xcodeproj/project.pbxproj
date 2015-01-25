@@ -180,7 +180,7 @@
 		BAFE97B81A7561EB00BC8181 /* backButton_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton_.png; sourceTree = "<group>"; };
 		BAFE97B91A7561EB00BC8181 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
 		BAFE97BC1A756AAF00BC8181 /* singleMode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = singleMode.png; sourceTree = "<group>"; };
-		BAFE97BE1A756FFB00BC8181 /* infoBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = infoBackground.png; path = images/infoBackground.png; sourceTree = "<group>"; };
+		BAFE97BE1A756FFB00BC8181 /* infoBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infoBackground.png; sourceTree = "<group>"; };
 		F3B873711A74FC9E009B3ACD /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Score.swift; path = images/Score.swift; sourceTree = "<group>"; };
 		F3B873731A74FCF3009B3ACD /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		F3B988671A73CC720054A4F1 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -244,7 +244,6 @@
 		BA73D5EE1A734B54005B852D /* WhatDoWeDoNow */ = {
 			isa = PBXGroup;
 			children = (
-				BAFE97BE1A756FFB00BC8181 /* infoBackground.png */,
 				BAA92FC51A74DE2500B84F85 /* images */,
 				F3DEE4CA1A73879D0002532A /* ActionButton.swift */,
 				F3B873711A74FC9E009B3ACD /* Score.swift */,
@@ -297,6 +296,7 @@
 		BAA92FC51A74DE2500B84F85 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BAFE97BE1A756FFB00BC8181 /* infoBackground.png */,
 				BAFE97BC1A756AAF00BC8181 /* singleMode.png */,
 				BAFE97B81A7561EB00BC8181 /* backButton_.png */,
 				BAFE97B91A7561EB00BC8181 /* backButton.png */,
