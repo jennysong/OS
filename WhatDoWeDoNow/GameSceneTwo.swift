@@ -37,7 +37,7 @@ class GameSceneTwo: SKScene {
         addChild(roundCount)
         
         player1.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
-        player2.position = CGPoint(x:self.size.width*0.35, y:self.size.height*0.48)
+        player2.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
         addChild(player1)
         player1.hidden = false
         addChild(player2)
