@@ -31,7 +31,9 @@ class GameSceneTwo: SKScene {
     
     override init(size: CGSize) {
         super.init(size: size)
-
+        self.TileWidth = self.size.width / 5.13
+        self.TileHeight = self.size.height / 3.57
+        
         var gameBG = SKSpriteNode(imageNamed: "gameBG")
         gameBG.size.height = self.size.height
         gameBG.size.width = self.size.width
@@ -39,7 +41,7 @@ class GameSceneTwo: SKScene {
         addChild(gameBG)
         
         roundCount.text = "Round: "+String(sportsarray.count)
-        roundCount.fontSize = 20
+        roundCount.fontSize = TileHeight / 5.25
         roundCount.fontColor = SKColor.whiteColor()
         roundCount.position = CGPoint(x: self.size.width*0, y: self.size.height*0.45)
         addChild(roundCount)
@@ -47,24 +49,29 @@ class GameSceneTwo: SKScene {
         let ratio = 1/self.size.height*195
         
         
-        backButton.size.height *= ratio
-        backButton.size.width *= ratio
+        backButton.size.height = TileHeight * 0.15346
+        backButton.size.width = TileWidth * 0.3395
         backButton.position = CGPoint(x:self.size.width*(0.40), y:self.size.height*0.47)
         backButton.zPosition = 1000
-        backButton_.size.height *= ratio
-        backButton_.size.width *= ratio
+        backButton_.size.height = TileHeight * 0.15346
+        backButton_.size.width = TileWidth * 0.3395
         backButton_.position = CGPoint(x:self.size.width*(0.40), y:self.size.height*0.47)
         backButton_.zPosition = 1000
         println("here is back button")
         let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToStart)
         addChild(goBack)
         
-        player1.size.height *= ratio
-        player1.size.width *= ratio
+        player1.size.height = TileHeight * 0.37623
+        player1.size.width = TileWidth * 0.962556
         player1.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
-        player2.size.height *= ratio
-        player2.size.width *= ratio
+        player2.size.height = TileHeight * 0.37623
+        player2.size.width = TileWidth * 0.962556
         player2.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
+        println("TileWidth = \(TileWidth)")
+        println("TileHeight = \(TileHeight)")
+        println("sh = \(player1.size.width)")
+        println("sh = \(player1.size.height)")
+        
         
         addChild(player1)
         player1.hidden = false
@@ -100,6 +107,8 @@ class GameSceneTwo: SKScene {
         for sport in sports {
             let sprite = SKSpriteNode(imageNamed: sport.sportType.spriteName)
             sprite.position = pointForColumn(sport.column, row:sport.row)
+            sprite.size.width = TileWidth * 0.7769
+            sprite.size.height = TileHeight * 0.9615
             sportsLayer.addChild(sprite)
             sport.sprite = sprite
         }

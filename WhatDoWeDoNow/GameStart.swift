@@ -39,6 +39,7 @@ func playBackgroundMusic(filename: String) {
 class GameStart: SKScene {
     //var level: Level!
     //var lv = 1
+    
     var scoreManager = ScoreManager()
     override init(size: CGSize) {
         super.init(size: size)
@@ -48,7 +49,7 @@ class GameStart: SKScene {
         //runAction(SKAction.repeatActionForever(SKAction.playSoundFileNamed("start.mp3", waitForCompletion: true)))
         
         scoreLabel.text = "Highest Score: "+String(score)
-        scoreLabel.fontSize = 18
+        scoreLabel.fontSize = self.size.height * 0.048
         scoreLabel.fontColor = SKColor.whiteColor()
         scoreLabel.position = CGPoint(x:self.size.width*(0.85), y:self.size.height*0.9)
         
@@ -62,8 +63,8 @@ class GameStart: SKScene {
         background.anchorPoint = CGPoint(x:0, y:0)
         
         var backgroundTalkbox = SKSpriteNode(imageNamed: "backgroundTalkbox")
-        backgroundTalkbox.size.height *= ratio
-        backgroundTalkbox.size.width *= ratio
+        backgroundTalkbox.size.height = self.size.height * 0.65312
+        backgroundTalkbox.size.width = self.size.width * 0.49817
         backgroundTalkbox.position = CGPoint(x:self.size.width*(0.35), y:self.size.height*0.55)
         
         addChild(background)
@@ -74,12 +75,16 @@ class GameStart: SKScene {
         //3 action buttons
         
         var buttonSingle = SKSpriteNode(imageNamed: "buttonSingle")
-        buttonSingle.size.height *= ratio
-        buttonSingle.size.width *= ratio
+        buttonSingle.size.height = self.size.height * 0.3397
+        buttonSingle.size.width = self.size.width * 0.336
         buttonSingle.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
+        println("h = \(self.size.height)")
+        println("bh = \(buttonSingle.size.height)")
+        println("w = \(self.size.width)")
+        println("bw = \(buttonSingle.size.width)")
         var buttonSingle_ = SKSpriteNode(imageNamed: "buttonSingle_")
-        buttonSingle_.size.height *= ratio
-        buttonSingle_.size.width *= ratio
+        buttonSingle_.size.height = self.size.height * 0.3397
+        buttonSingle_.size.width = self.size.width * 0.336
         buttonSingle_.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
         
         
