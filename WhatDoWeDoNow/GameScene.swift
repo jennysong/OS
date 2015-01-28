@@ -259,7 +259,7 @@ class GameScene: SKScene {
                     skS.size = texture.size()
                     skS.runAction(SKAction.setTexture(texture))
                     sprite.addChild(skS)
-                    skS.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))
+                    skS.runAction(SKAction.sequence([SKAction.waitForDuration(0.8),SKAction.removeFromParent()]))
                     if ( i == self.sportsarray.count - 1){
                         self.touchable = true
                     }
