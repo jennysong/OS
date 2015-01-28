@@ -107,8 +107,8 @@ class GameSceneTwo: SKScene {
         for sport in sports {
             let sprite = SKSpriteNode(imageNamed: sport.sportType.spriteName)
             sprite.position = pointForColumn(sport.column, row:sport.row)
-            sprite.size.width = TileWidth * 0.7769
-            sprite.size.height = TileHeight * 0.9615
+            sprite.size.width = TileWidth * 0.74
+            sprite.size.height = TileHeight * 0.92
             sportsLayer.addChild(sprite)
             sport.sprite = sprite
         }
@@ -175,6 +175,8 @@ class GameSceneTwo: SKScene {
         if let sprite = sport.sprite {
             let texture = SKTexture(imageNamed: sport.sportType.highlightedSpriteName)
             selectionSprite.size = texture.size()
+            selectionSprite.size.width = TileWidth * 0.90
+            selectionSprite.size.height = TileHeight * 1.10
             selectionSprite.runAction(SKAction.setTexture(texture))
             
             sprite.addChild(selectionSprite)
