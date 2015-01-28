@@ -70,7 +70,7 @@ class GameScene: SKScene {
         
         addChild(you)
         addChild(bot)
-        you.hidden = true
+        you.hidden = false
         bot.hidden = true
         
         
@@ -198,11 +198,12 @@ class GameScene: SKScene {
     
     
     func nextTurn(){
-        runAction(SKAction.playSoundFileNamed("change.wav", waitForCompletion: true))
+//runAction(SKAction.playSoundFileNamed("change.wav", waitForCompletion: true))
+        var waitTime: NSTimeInterval = 0.8 * NSTimeInterval(sportsarray.count+1)
         if (player == 1) {
             player = 2
             println("next turn!: player 2")
-            runAction(SKAction.sequence([SKAction.runBlock{self.showPlayer()}, SKAction.waitForDuration(1), SKAction.runBlock{self.botPlay()}]))
+            runAction(SKAction.sequence([SKAction.runBlock{self.showPlayer()}, SKAction.waitForDuration(1), SKAction.runBlock{self.botPlay()}, SKAction.waitForDuration(waitTime), SKAction.runBlock{self.nextTurn()}]))
         } else { player = 1
             showPlayer()
             println("next turn!: player 1")}
@@ -246,7 +247,7 @@ class GameScene: SKScene {
             addChild(botBG)
             botBG.zPosition = 1000
             botBG.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.runBlock(){
-                self.touchable = true
+                self.touchable = false
                 },SKAction.removeFromParent()]))
             bot.hidden = false
             you.hidden = true
@@ -278,12 +279,9 @@ class GameScene: SKScene {
                     skS.runAction(SKAction.setTexture(texture))
                     sprite.addChild(skS)
                     skS.runAction(SKAction.sequence([SKAction.waitForDuration(0.6),SKAction.removeFromParent()]))
-                    if ( i == self.sportsarray.count - 1){
-                        self.touchable = true
-                    }}]))
+                    }]))
             }
         }
-        nextTurn()
     }
     
     func goBackToStart(){
