@@ -78,10 +78,7 @@ class GameStart: SKScene {
         buttonSingle.size.height = self.size.height * 0.3397
         buttonSingle.size.width = self.size.width * 0.336
         buttonSingle.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
-        println("h = \(self.size.height)")
-        println("bh = \(buttonSingle.size.height)")
-        println("w = \(self.size.width)")
-        println("bw = \(buttonSingle.size.width)")
+
         var buttonSingle_ = SKSpriteNode(imageNamed: "buttonSingle_")
         buttonSingle_.size.height = self.size.height * 0.3397
         buttonSingle_.size.width = self.size.width * 0.336
@@ -89,24 +86,27 @@ class GameStart: SKScene {
         
         
         var buttonDual = SKSpriteNode(imageNamed: "buttonDual")
-        buttonDual.size.height *= ratio
-        buttonDual.size.width *= ratio
+        buttonDual.size.height = self.size.height * 0.16085
+        buttonDual.size.width = self.size.width * 0.336
         buttonDual.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.15)
         var buttonDual_ = SKSpriteNode(imageNamed: "buttonDual_")
-        buttonDual_.size.height *= ratio
-        buttonDual_.size.width *= ratio
+        buttonDual_.size.height = self.size.height * 0.16085
+        buttonDual_.size.width = self.size.width * 0.336
         buttonDual_.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.15)
 
         var buttonHowTo = SKSpriteNode(imageNamed: "buttonHowTo")
-        buttonHowTo.size.height *= ratio
-        buttonHowTo.size.width *= ratio
+        buttonHowTo.size.height = self.size.height * 0.287
+        buttonHowTo.size.width = self.size.width * 0.161379
         buttonHowTo.position = CGPoint(x:self.size.width*(0.10), y:self.size.height*0.15)
         var buttonHowTo_ = SKSpriteNode(imageNamed: "buttonHowTo_")
-        buttonHowTo_.size.height *= ratio
-        buttonHowTo_.size.width *= ratio
+        buttonHowTo_.size.height = self.size.height * 0.287
+        buttonHowTo_.size.width = self.size.width * 0.161379
         buttonHowTo_.position = CGPoint(x:self.size.width*(0.10), y:self.size.height*0.15)
         
-        
+        println("h = \(self.size.height)")
+        println("bh = \(buttonHowTo.size.height)")
+        println("w = \(self.size.width)")
+        println("bw = \(buttonHowTo.size.width)")
         
         let a:ActionButton = ActionButton(defaultButtonImage: buttonSingle, activeButtonImage: buttonSingle_, buttonAction: changeScene)
         let b:ActionButton = ActionButton(defaultButtonImage: buttonDual, activeButtonImage: buttonDual_, buttonAction: changeSceneTwo)
