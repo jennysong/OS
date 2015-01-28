@@ -20,7 +20,11 @@ class GameScene: SKScene {
     var sportsarray = Array<Sport>()
     var numOfTap: Int = 0
     var player:Int = 1
-    var singleMode = SKSpriteNode(imageNamed: "singleMode")
+    var you = SKSpriteNode(imageNamed: "you")
+    var bot = SKSpriteNode(imageNamed: "bot")
+    var youBG = SKSpriteNode(imageNamed: "youBG")
+    var botBG = SKSpriteNode(imageNamed: "botBG")
+    //var singleMode = SKSpriteNode(imageNamed: "singleMode")
     let roundCount = SKLabelNode(fontNamed: "ChalkboardSE-Light")
     var backButton = SKSpriteNode(imageNamed: "backButton")
     var backButton_ = SKSpriteNode(imageNamed: "backButton_")
@@ -54,16 +58,31 @@ class GameScene: SKScene {
         backButton_.size.width = TileWidth * 0.3395
         backButton_.position = CGPoint(x:self.size.width*(0.40), y:self.size.height*0.47)
         backButton_.zPosition = 1000
-        println("here is back button")
         let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToStart)
         addChild(goBack)
 
-        singleMode.size.height = TileHeight * 0.2079
-        singleMode.size.width = TileWidth * 0.9199
-        singleMode.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.47)
-        addChild(singleMode)
+        you.size.height = TileHeight * 0.37623
+        you.size.width = TileWidth * 0.962556
+        you.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
+        bot.size.height = TileHeight * 0.37623
+        bot.size.width = TileWidth * 0.962556
+        bot.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
+        
+        addChild(you)
+        addChild(bot)
+        you.hidden = true
+        bot.hidden = true
+        
         
         anchorPoint = CGPoint(x: 0.5, y:0.45)
+        
+        youBG.size.height = self.size.height
+        youBG.size.width = self.size.width
+        youBG.position = CGPoint(x:0, y:self.size.height*0.05)
+        
+        botBG.size.height = self.size.height
+        botBG.size.width = self.size.width
+        botBG.position = CGPoint(x:0, y:self.size.height*0.05)
         
         
         addChild(gameLayer)
@@ -83,8 +102,8 @@ class GameScene: SKScene {
         for sport in sports {
             let sprite = SKSpriteNode(imageNamed: sport.sportType.spriteName)
             sprite.position = pointForColumn(sport.column, row:sport.row)
-            sprite.size.width = TileWidth * 0.7769
-            sprite.size.height = TileHeight * 0.9615
+            sprite.size.width = TileWidth * 0.74
+            sprite.size.height = TileHeight * 0.92
             
             sportsLayer.addChild(sprite)
             sport.sprite = sprite
@@ -152,6 +171,8 @@ class GameScene: SKScene {
         if let sprite = sport.sprite {
             let texture = SKTexture(imageNamed: sport.sportType.highlightedSpriteName)
             selectionSprite.size = texture.size()
+            selectionSprite.size.width = TileWidth * 0.90
+            selectionSprite.size.height = TileHeight * 1.10
             selectionSprite.runAction(SKAction.setTexture(texture))
             
             runAction(SKAction.sequence([SKAction.runBlock{sprite.addChild(self.selectionSprite)}, SKAction.waitForDuration(0.8), SKAction.runBlock{self.selectionSprite.removeFromParent()}]))
@@ -163,23 +184,13 @@ class GameScene: SKScene {
     
     
     func checkCorrect(sport: Sport) -> Bool{
-        println("number of tab = \(numOfTap)")
-        println("sportarray count = \(sportsarray.endIndex)")
-        
         if(sportsarray.count == 0){
-            println("start: Player \(player)")
             return true
-        }
-        if(sportsarray.count == numOfTap){ // first add to the array and every last turn
-            println("last turn")
+        } else if(sportsarray.count == numOfTap){ // first add to the array and every last turn
             return true
-        }
-        if (sport == sportsarray[numOfTap]) {
-            println("correct")
+        } else if (sport == sportsarray[numOfTap]) {
             return true
-        }
-        else {
-            println("wrong")
+        } else {
             return false
         }
     }
@@ -191,21 +202,14 @@ class GameScene: SKScene {
         if (player == 1) {
             player = 2
             println("next turn!: player 2")
-            runAction(SKAction.sequence([SKAction.waitForDuration(1), SKAction.runBlock{self.botPlay()}]))
-            //botPlay()
-        }
-        else { player = 1
-            //self.touchable = true
+            runAction(SKAction.sequence([SKAction.runBlock{self.showPlayer()}, SKAction.waitForDuration(1), SKAction.runBlock{self.botPlay()}]))
+        } else { player = 1
+            showPlayer()
             println("next turn!: player 1")}
-        
-        //if selectionSprite.parent != nil {
-            //selectionSprite.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.removeFromParent()]))}
         numOfTap = 0
-        
     }
     
     func reset(){
-        println("reset")
         numOfTap = 0
         player = 1
         sportsarray = []
@@ -226,36 +230,47 @@ class GameScene: SKScene {
             let reveal = SKTransition.flipHorizontalWithDuration(0.5)
             let scene = Result(size: self.size,string: string)
             self.view?.presentScene(scene, transition:reveal)
-            }
-            ]))
+            }]))
     }
+    
+    func showPlayer(){
+        if (player == 1){
+            addChild(youBG)
+            youBG.zPosition = 1000
+            youBG.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.runBlock(){
+                self.touchable = true
+                },SKAction.removeFromParent()]))
+            bot.hidden = true
+            you.hidden = false
+        } else {
+            addChild(botBG)
+            botBG.zPosition = 1000
+            botBG.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.runBlock(){
+                self.touchable = true
+                },SKAction.removeFromParent()]))
+            bot.hidden = false
+            you.hidden = true
+        }
+    }
+    
     
     func switchSceneToResults(string: String, score: Int) {
         runAction(SKAction.sequence([SKAction.waitForDuration(0.5),SKAction.runBlock(){
             let reveal = SKTransition.flipHorizontalWithDuration(0.5)
             let scene = Result(size: self.size,string: string,score: score)
             self.view?.presentScene(scene, transition:reveal)
-            }
-            ]))
+            }]))
     }
-    
     
     func botPlay() {
         var skS = SKSpriteNode()
-        println("bot is playing")
-        
         var randomColumn = Int(arc4random_uniform(5))
         var randomRow = Int(arc4random_uniform(3))
         var randomSport = level.sportAtColumn(randomColumn, row: randomRow)
         sportsarray.append(randomSport!)
-        println("added\(randomSport!)")
         for i in 0 ... (sportsarray.count - 1) {
-            println("what happens here?")
-            
             var sport: Sport = sportsarray[i]
             if let sprite = sport.sprite {
-                
-                
                 runAction(SKAction.sequence([SKAction.waitForDuration(0.8*NSTimeInterval(i)),SKAction.playSoundFileNamed("change.wav", waitForCompletion: false), SKAction.runBlock{
                     let texture = SKTexture(imageNamed: sport.sportType.highlightedSpriteName)
                     skS = SKSpriteNode(texture: texture)
@@ -265,13 +280,9 @@ class GameScene: SKScene {
                     skS.runAction(SKAction.sequence([SKAction.waitForDuration(0.6),SKAction.removeFromParent()]))
                     if ( i == self.sportsarray.count - 1){
                         self.touchable = true
-                    }
-                    }]))
-                
+                    }}]))
             }
-            
         }
-        
         nextTurn()
     }
     

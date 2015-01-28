@@ -45,7 +45,6 @@ class Level {
                 // 3
                 let sport =  Sport(column: column, row: row, sportType: sportType)
                 sports[column, row] = sport
-                println(sport)
                 // 4
                 set.addElement(sport)
                 num++

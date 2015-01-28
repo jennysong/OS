@@ -103,10 +103,10 @@ class GameStart: SKScene {
         buttonHowTo_.size.width = self.size.width * 0.161379
         buttonHowTo_.position = CGPoint(x:self.size.width*(0.10), y:self.size.height*0.15)
         
-        println("h = \(self.size.height)")
-        println("bh = \(buttonHowTo.size.height)")
-        println("w = \(self.size.width)")
-        println("bw = \(buttonHowTo.size.width)")
+        //println("h = \(self.size.height)")
+        //println("bh = \(buttonHowTo.size.height)")
+        //println("w = \(self.size.width)")
+        //println("bw = \(buttonHowTo.size.width)")
         
         let a:ActionButton = ActionButton(defaultButtonImage: buttonSingle, activeButtonImage: buttonSingle_, buttonAction: changeScene)
         let b:ActionButton = ActionButton(defaultButtonImage: buttonDual, activeButtonImage: buttonDual_, buttonAction: changeSceneTwo)

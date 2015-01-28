@@ -57,7 +57,8 @@ class GameSceneTwo: SKScene {
         backButton_.size.width = TileWidth * 0.3395
         backButton_.position = CGPoint(x:self.size.width*(0.40), y:self.size.height*0.47)
         backButton_.zPosition = 1000
-        println("here is back button")
+
+
         let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToStart)
         addChild(goBack)
         
@@ -67,11 +68,6 @@ class GameSceneTwo: SKScene {
         player2.size.height = TileHeight * 0.37623
         player2.size.width = TileWidth * 0.962556
         player2.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
-        println("TileWidth = \(TileWidth)")
-        println("TileHeight = \(TileHeight)")
-        println("sh = \(player1.size.width)")
-        println("sh = \(player1.size.height)")
-        
         
         addChild(player1)
         player1.hidden = false
@@ -88,7 +84,6 @@ class GameSceneTwo: SKScene {
         player2bg.size.width = self.size.width
         player2bg.position = CGPoint(x:0, y:self.size.height*0.05)
         
-        backgroundColor = SKColor.blackColor()
         addChild(gameLayer)
         let layerPosition = CGPoint(x: -TileWidth * CGFloat(NumColumns) / 2, y: -TileHeight * CGFloat(NumRows) / 2)
         sportsLayer.position = layerPosition
@@ -103,7 +98,6 @@ class GameSceneTwo: SKScene {
     }
     
     func addSpritesForSports(sports: Set<Sport>) {
-        println(sports)
         for sport in sports {
             let sprite = SKSpriteNode(imageNamed: sport.sportType.spriteName)
             sprite.position = pointForColumn(sport.column, row:sport.row)
@@ -189,30 +183,23 @@ class GameSceneTwo: SKScene {
     }
     
     func checkCorrect(sport: Sport) -> Bool{
-        println("number of tab = \(numOfTap)")
-        println("sportarray count = \(sportsarray.endIndex)")
-        
+
         if(sportsarray.count == 0){
-            println("start: Player \(player)")
             return true
         }
         if(sportsarray.count == numOfTap){ // first add to the array and every last turn
-            println("last turn")
             return true
         }
         if (sport == sportsarray[numOfTap]) {
-            println("correct")
             return true
         }
         else {
-            println("wrong")
             return false
         }
     }
     
     
     func bothWin(){
-        println("both won!")
         reset()
         switchSceneToResults("bothWon")
     }
@@ -233,7 +220,6 @@ class GameSceneTwo: SKScene {
     }
     
     func reset(){
-        println("reset")
         numOfTap = 0
         player = 1
         sportsarray = []
@@ -245,7 +231,6 @@ class GameSceneTwo: SKScene {
     func whoWon(){
         if (player == 1) { player = 2}
         else { player = 1}
-        println("player\(player) won")
         switchSceneToResults("\(player)Won")
         reset()
     }
@@ -262,7 +247,6 @@ class GameSceneTwo: SKScene {
     }
     
     func showPlayer(){
-        println("next turn!: player \(player)")
         if (player == 1){
             addChild(player1bg)
             player1bg.zPosition = 1000

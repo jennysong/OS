@@ -50,7 +50,6 @@ class Result: SKScene {
         
         var scoreText = SKLabelNode(fontNamed: "ChalkboardSE-Light")
         scoreText.text = String(score)
-        println("scoreText")
         scoreText.fontSize = 100
         scoreText.fontColor = SKColor.blackColor()
         scoreText.position = CGPoint(x: self.size.width*0.5, y: self.size.height*0.35)
