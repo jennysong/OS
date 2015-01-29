@@ -62,7 +62,7 @@ class GameScene: SKScene {
         addChild(goBack)
 
         you.size.height = TileHeight * 0.37623
-        you.size.width = TileWidth * 0.962556
+        you.size.width = self.size.width * 0.220629685
         you.position = CGPoint(x:self.size.width*(-0.35), y:self.size.height*0.48)
         bot.size.height = TileHeight * 0.37623
         bot.size.width = self.size.width * 0.220629685
