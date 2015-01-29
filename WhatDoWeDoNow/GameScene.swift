@@ -275,7 +275,8 @@ class GameScene: SKScene {
                 runAction(SKAction.sequence([SKAction.waitForDuration(0.8*NSTimeInterval(i)),SKAction.playSoundFileNamed("change.wav", waitForCompletion: false), SKAction.runBlock{
                     let texture = SKTexture(imageNamed: sport.sportType.highlightedSpriteName)
                     skS = SKSpriteNode(texture: texture)
-                    skS.size = texture.size()
+                    skS.size.width = self.TileWidth * 0.90
+                    skS.size.height = self.TileHeight * 1.10
                     skS.runAction(SKAction.setTexture(texture))
                     sprite.addChild(skS)
                     skS.runAction(SKAction.sequence([SKAction.waitForDuration(0.6),SKAction.removeFromParent()]))
